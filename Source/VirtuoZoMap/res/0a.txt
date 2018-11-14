@@ -1,0 +1,7 @@
+!根节点         res\\a.ico
+	@叶子1	res\\icon1.ico
+		#项目1	res\\a.ico
+		#项目2	res\\icon4.ico
+	@叶子2	res\\icon2.ico
+		#项目3	res\\icon5.ico
+		#项目4	res\\icon6.ico

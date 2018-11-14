@@ -1,0 +1,339 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{BA61C835-0B86-4410-9CCA-C5F7BEC291CE}</ProjectGuid>
+    <RootNamespace>VirtuoZoMap</RootNamespace>
+    <Keyword>MFCProj</Keyword>
+    <ProjectName>
+    </ProjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>MultiByte</CharacterSet>
+    <UseOfMfc>Dynamic</UseOfMfc>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+    <UseOfMfc>Dynamic</UseOfMfc>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+    <OutDir>$(SolutionDir)\bin\$(Configuration)\</OutDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+    <OutDir>$(SolutionDir)bin\$(Configuration)\</OutDir>
+    <TargetName>SkyPhoto-Map</TargetName>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>..\..\BaseLib\Include;..\..\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <TreatWarningAsError>false</TreatWarningAsError>
+      <ExceptionHandling>Async</ExceptionHandling>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>..\..\BaseLib\Lib;..\..\Lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Link>
+    <Midl>
+      <MkTypLibCompatible>false</MkTypLibCompatible>
+      <ValidateAllParameters>true</ValidateAllParameters>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </Midl>
+    <ResourceCompile>
+      <Culture>0x0804</Culture>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <Optimization>Disabled</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>..\..\BaseLib\Include;..\..\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <ExceptionHandling>Async</ExceptionHandling>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalLibraryDirectories>..\..\BaseLib\Lib;..\..\Lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Link>
+    <Midl>
+      <MkTypLibCompatible>false</MkTypLibCompatible>
+      <ValidateAllParameters>true</ValidateAllParameters>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </Midl>
+    <ResourceCompile>
+      <Culture>0x0804</Culture>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <PostBuildEvent>
+      <Command>
+      </Command>
+    </PostBuildEvent>
+    <PostBuildEvent>
+      <Message>加密</Message>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <None Include="res\111111.bmp" />
+    <None Include="res\APERTURE.bmp" />
+    <None Include="res\bitmap15.bmp" />
+    <None Include="res\bitmap7.bmp" />
+    <None Include="res\bitmap_m.bmp" />
+    <None Include="res\bmp00002.bmp" />
+    <None Include="res\cursor.bmp" />
+    <None Include="res\drawbar.bmp" />
+    <None Include="res\drawbar1.bmp" />
+    <None Include="res\filebar_.bmp" />
+    <None Include="res\hide.ico" />
+    <None Include="res\icon1.ico" />
+    <None Include="res\idr_main.ico" />
+    <None Include="res\loadbar.bmp" />
+    <None Include="res\lock.ico" />
+    <None Include="res\logo.bmp" />
+    <None Include="res\mainfram.bmp" />
+    <None Include="res\modebar.bmp" />
+    <None Include="res\modifyba.bmp" />
+    <None Include="res\no.ico" />
+    <None Include="res\output_wnd.ico" />
+    <None Include="res\output_wnd_hc.ico" />
+    <None Include="res\properties.bmp" />
+    <None Include="res\properties_hc.bmp" />
+    <None Include="res\properties_wnd.ico" />
+    <None Include="res\properties_wnd_hc.ico" />
+    <None Include="res\show.ico" />
+    <None Include="res\SkyPhoto-Map.ico" />
+    <None Include="res\splash.bmp" />
+    <None Include="res\statusbar_logo.bmp" />
+    <None Include="res\statusbar_logo.ico" />
+    <None Include="res\SymLib2006\2000\1111.bmp" />
+    <None Include="res\SymLib2006\2000\2000-1--1-18.bmp" />
+    <None Include="res\SymLib2006\2000\2000-2--1-126.bmp" />
+    <None Include="res\SymLib2006\2000\2000-2--1-18.bmp" />
+    <None Include="res\SymLib2006\2000\2000-2--109-126.bmp" />
+    <None Include="res\SymLib2006\2000\2000-2--19-36.bmp" />
+    <None Include="res\SymLib2006\2000\2000-2--37-54.bmp" />
+    <None Include="res\SymLib2006\2000\2000-2--55-72.bmp" />
+    <None Include="res\SymLib2006\2000\2000-2--73-90.bmp" />
+    <None Include="res\SymLib2006\2000\2000-2--91-108.bmp" />
+    <None Include="res\SymLib2006\2000\2000-3--1-126.bmp" />
+    <None Include="res\SymLib2006\2000\2000-3--127-223.bmp" />
+    <None Include="res\SymLib2006\2000\2000-4--1-126.bmp" />
+    <None Include="res\SymLib2006\2000\2000-4--127-154.bmp" />
+    <None Include="res\SymLib2006\2000\2000-5--1-110.bmp" />
+    <None Include="res\SymLib2006\2000\2000-6--1-22.bmp" />
+    <None Include="res\SymLib2006\2000\2000-6--1-24.bmp" />
+    <None Include="res\SymLib2006\2000\2000-7--1-57.bmp" />
+    <None Include="res\SymLib2006\2000\2000-8--1-87.bmp" />
+    <None Include="res\SymLib2006\2000\2000-9--1-8.bmp" />
+    <None Include="res\SymLib2006\5000\5000-1--1-20.bmp" />
+    <None Include="res\SymLib2006\5000\5000-2--1-125.bmp" />
+    <None Include="res\SymLib2006\5000\5000-3--1-173.bmp" />
+    <None Include="res\SymLib2006\5000\5000-4--1- 128.bmp" />
+    <None Include="res\SymLib2006\5000\5000-4--1-128.bmp" />
+    <None Include="res\SymLib2006\5000\5000-5--1- 66.bmp" />
+    <None Include="res\SymLib2006\5000\5000-5--1-39.bmp" />
+    <None Include="res\SymLib2006\5000\5000-6--1- 29.bmp" />
+    <None Include="res\SymLib2006\5000\5000-6--1-29.bmp" />
+    <None Include="res\SymLib2006\5000\5000-7--1- 58.bmp" />
+    <None Include="res\SymLib2006\5000\5000-7--1-58.bmp" />
+    <None Include="res\SymLib2006\5000\5000-8--1- 83.bmp" />
+    <None Include="res\SymLib2006\5000\5000-8--1-83.bmp" />
+    <None Include="res\SymLib2006\5000\5000-9--1-13.bmp" />
+    <None Include="res\Toolbar.bmp" />
+    <None Include="res\toolbar1.bmp" />
+    <None Include="res\Toolbar256.bmp" />
+    <None Include="res\unlock.ico" />
+    <None Include="res\viewbar.bmp" />
+    <None Include="res\viewbar1.bmp" />
+    <None Include="res\viewbar3.bmp" />
+    <None Include="res\VirtuoZoMap.ico" />
+    <None Include="res\VirtuoZoMap.rc2" />
+    <None Include="res\VirtuoZoMapDoc.ico" />
+    <None Include="res\VirtuoZoNT.bmp" />
+    <None Include="res\VirtuoZoNT1.bmp" />
+    <None Include="res\yes.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\include\CSException.h" />
+    <ClInclude Include="..\include\MapSvrDef.h" />
+    <ClInclude Include="AboutLogo.h" />
+    <ClInclude Include="BCMenu.h" />
+    <ClInclude Include="BtnST.h" />
+    <ClInclude Include="ChildFrm.h" />
+    <ClInclude Include="ContourDockDlg.h" />
+    <ClInclude Include="CoolStatusBar.h" />
+    <ClInclude Include="CSpGLImgData.h" />
+    <ClInclude Include="DlgAdjustBrightness.h" />
+    <ClInclude Include="DlgAutoChk.h" />
+    <ClInclude Include="DlgColorSet.h" />
+    <ClInclude Include="DlgCommonSym.h" />
+    <ClInclude Include="DlgContourSet.h" />
+    <ClInclude Include="DlgFileControl.h" />
+    <ClInclude Include="DlgGridOption.h" />
+    <ClInclude Include="DlgLastModelList.h" />
+    <ClInclude Include="DlgLayerControl.h" />
+    <ClInclude Include="DlgLayerCut.h" />
+    <ClInclude Include="DlgModelParam.h" />
+    <ClInclude Include="DlgNewVzmSetting.h" />
+    <ClInclude Include="DlgObjectBrowse.h" />
+    <ClInclude Include="DlgOtherOptions.h" />
+    <ClInclude Include="DlgProjectView.h" />
+    <ClInclude Include="DlgSetCurCoord.h" />
+    <ClInclude Include="DlgSetCZValue.h" />
+    <ClInclude Include="DlgSetMZValue.h" />
+    <ClInclude Include="DlgVctMosaic.h" />
+    <ClInclude Include="DlgVectorView.h" />
+    <ClInclude Include="DrawDockDlg.h" />
+    <ClInclude Include="g_gloable.h" />
+    <ClInclude Include="InOutputDlg.h" />
+    <ClInclude Include="LayerBatchTranDlg.h" />
+    <ClInclude Include="MainFrm.h" />
+    <ClInclude Include="MapControls.h" />
+    <ClInclude Include="mdisetcursorpage.h" />
+    <ClInclude Include="MdiSnapPage.h" />
+    <ClInclude Include="ObjectParaDockDlg.h" />
+    <ClInclude Include="OptimizeDlg.h" />
+    <ClInclude Include="OutputWnd.h" />
+    <ClInclude Include="PageGridOption.h" />
+    <ClInclude Include="PageSetAlert.h" />
+    <ClInclude Include="ProgDlg.h" />
+    <ClInclude Include="Resource.h" />
+    <ClInclude Include="SetRangeDlg.h" />
+    <ClInclude Include="SortListCtrl.h" />
+    <ClInclude Include="SpImgCheckView.h" />
+    <ClInclude Include="SpImgView.h" />
+    <ClInclude Include="SplashWnd.h" />
+    <ClInclude Include="SpSteView.h" />
+    <ClInclude Include="SpVctLateralView.h" />
+    <ClInclude Include="SpVctView.h" />
+    <ClInclude Include="SpVctView2.h" />
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="SymbolsPane.h" />
+    <ClInclude Include="TabSheet.h" />
+    <ClInclude Include="targetver.h" />
+    <ClInclude Include="TextDockDlg.h" />
+    <ClInclude Include="TreeCtrlEx.h" />
+    <ClInclude Include="ViewOptionDlg.h" />
+    <ClInclude Include="VirtuoZoMap.h" />
+    <ClInclude Include="VirtuoZoMapDef.h" />
+    <ClInclude Include="VirtuoZoMapDoc.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="AboutLogo.cpp" />
+    <ClCompile Include="BCMenu.cpp" />
+    <ClCompile Include="BtnST.cpp" />
+    <ClCompile Include="ChildFrm.cpp" />
+    <ClCompile Include="ContourDockDlg.cpp" />
+    <ClCompile Include="CoolStatusBar.cpp" />
+    <ClCompile Include="CSpGLImgData.cpp" />
+    <ClCompile Include="DlgAdjustBrightness.cpp" />
+    <ClCompile Include="DlgAutoChk.cpp" />
+    <ClCompile Include="DlgColorSet.cpp" />
+    <ClCompile Include="DlgCommonSym.cpp" />
+    <ClCompile Include="DlgContourSet.cpp" />
+    <ClCompile Include="DlgFileControl.cpp" />
+    <ClCompile Include="DlgGridOption.cpp" />
+    <ClCompile Include="DlgLastModelList.cpp" />
+    <ClCompile Include="DlgLayerControl.cpp" />
+    <ClCompile Include="DlgLayerCut.cpp" />
+    <ClCompile Include="DlgModelParam.cpp" />
+    <ClCompile Include="DlgNewVzmSetting.cpp" />
+    <ClCompile Include="DlgObjectBrowse.cpp" />
+    <ClCompile Include="DlgOtherOptions.cpp" />
+    <ClCompile Include="DlgProjectView.cpp" />
+    <ClCompile Include="DlgSetCurCoord.cpp" />
+    <ClCompile Include="DlgSetCZValue.cpp" />
+    <ClCompile Include="DlgSetMZValue.cpp" />
+    <ClCompile Include="DlgVctMosaic.cpp" />
+    <ClCompile Include="DlgVectorView.cpp" />
+    <ClCompile Include="DrawDockDlg.cpp" />
+    <ClCompile Include="InOutputDlg.cpp" />
+    <ClCompile Include="LayerBatchTranDlg.cpp" />
+    <ClCompile Include="MainFrm.cpp" />
+    <ClCompile Include="MapControls.cpp" />
+    <ClCompile Include="mdisetcursorpage.cpp" />
+    <ClCompile Include="MdiSnapPage.cpp" />
+    <ClCompile Include="ObjectParaDockDlg.cpp" />
+    <ClCompile Include="OptimizeDlg.cpp" />
+    <ClCompile Include="OutputWnd.cpp" />
+    <ClCompile Include="PageGridOption.cpp" />
+    <ClCompile Include="PageSetAlert.cpp" />
+    <ClCompile Include="ProgDlg.cpp" />
+    <ClCompile Include="SetRangeDlg.cpp" />
+    <ClCompile Include="SortListCtrl.cpp" />
+    <ClCompile Include="SpImgCheckView.cpp" />
+    <ClCompile Include="SpImgView.cpp" />
+    <ClCompile Include="SplashWnd.cpp" />
+    <ClCompile Include="SpSteView.cpp" />
+    <ClCompile Include="SpVctLateralView.cpp" />
+    <ClCompile Include="SpVctView.cpp" />
+    <ClCompile Include="SpVctView2.cpp" />
+    <ClCompile Include="stdafx.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="SymbolsPane.cpp" />
+    <ClCompile Include="TabSheet.cpp" />
+    <ClCompile Include="TextDockDlg.cpp" />
+    <ClCompile Include="TreeCtrlEx.cpp" />
+    <ClCompile Include="ViewOptionDlg.cpp" />
+    <ClCompile Include="VirtuoZoMap.cpp" />
+    <ClCompile Include="VirtuoZoMapDoc.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="VirtuoZoMap.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CSException\CSException.vcxproj">
+      <Project>{b4184595-c9ef-4161-b8e9-bb37cc6155f1}</Project>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+  <ProjectExtensions>
+    <VisualStudio>
+      <UserProperties RESOURCE_FILE="VirtuoZoMap.rc" />
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

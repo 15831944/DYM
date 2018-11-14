@@ -1,0 +1,7 @@
+; MapSvrBreakBy1Pt.def : Declares the module parameters for the DLL.
+
+;LIBRARY      "MapSvrBreakBy1Pt"
+;DESCRIPTION  'StdSpDll Windows Dynamic Link Library'
+
+EXPORTS
+    ; Explicit exports can go here

@@ -1,0 +1,363 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="ChildFrm.cpp" />
+    <ClCompile Include="ContourDockDlg.cpp" />
+    <ClCompile Include="CoolStatusBar.cpp" />
+    <ClCompile Include="CSpGLImgData.cpp" />
+    <ClCompile Include="DlgAdjustBrightness.cpp" />
+    <ClCompile Include="DlgAutoChk.cpp" />
+    <ClCompile Include="DlgColorSet.cpp" />
+    <ClCompile Include="DlgContourSet.cpp" />
+    <ClCompile Include="DlgFileControl.cpp" />
+    <ClCompile Include="DlgGridOption.cpp" />
+    <ClCompile Include="DlgLastModelList.cpp" />
+    <ClCompile Include="DlgLayerControl.cpp" />
+    <ClCompile Include="DlgLayerCut.cpp" />
+    <ClCompile Include="DlgModelParam.cpp" />
+    <ClCompile Include="DlgNewVzmSetting.cpp" />
+    <ClCompile Include="DlgObjectBrowse.cpp" />
+    <ClCompile Include="DlgOtherOptions.cpp" />
+    <ClCompile Include="DlgProjectView.cpp" />
+    <ClCompile Include="DlgSetCurCoord.cpp" />
+    <ClCompile Include="DlgVctMosaic.cpp" />
+    <ClCompile Include="DrawDockDlg.cpp" />
+    <ClCompile Include="InOutputDlg.cpp" />
+    <ClCompile Include="LayerBatchTranDlg.cpp" />
+    <ClCompile Include="MainFrm.cpp" />
+    <ClCompile Include="MapControls.cpp" />
+    <ClCompile Include="mdisetcursorpage.cpp" />
+    <ClCompile Include="MdiSnapPage.cpp" />
+    <ClCompile Include="ObjectParaDockDlg.cpp" />
+    <ClCompile Include="OptimizeDlg.cpp" />
+    <ClCompile Include="OutputWnd.cpp" />
+    <ClCompile Include="PageGridOption.cpp" />
+    <ClCompile Include="PageSetAlert.cpp" />
+    <ClCompile Include="SetRangeDlg.cpp" />
+    <ClCompile Include="SortListCtrl.cpp" />
+    <ClCompile Include="SpImgCheckView.cpp" />
+    <ClCompile Include="SpImgView.cpp" />
+    <ClCompile Include="SplashWnd.cpp" />
+    <ClCompile Include="SpSteView.cpp" />
+    <ClCompile Include="SpVctLateralView.cpp" />
+    <ClCompile Include="SpVctView.cpp" />
+    <ClCompile Include="stdafx.cpp" />
+    <ClCompile Include="SymbolsPane.cpp" />
+    <ClCompile Include="TabSheet.cpp" />
+    <ClCompile Include="TextDockDlg.cpp" />
+    <ClCompile Include="TreeCtrlEx.cpp" />
+    <ClCompile Include="ViewOptionDlg.cpp" />
+    <ClCompile Include="VirtuoZoMap.cpp" />
+    <ClCompile Include="VirtuoZoMapDoc.cpp" />
+    <ClCompile Include="AboutLogo.cpp" />
+    <ClCompile Include="ProgDlg.cpp" />
+    <ClCompile Include="DlgSetMZValue.cpp" />
+    <ClCompile Include="DlgSetCZValue.cpp" />
+    <ClCompile Include="DlgVectorView.cpp" />
+    <ClCompile Include="SpVctView2.cpp" />
+    <ClCompile Include="BCMenu.cpp" />
+    <ClCompile Include="BtnST.cpp" />
+    <ClCompile Include="DlgCommonSym.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\include\CSException.h" />
+    <ClInclude Include="..\include\MapSvrDef.h" />
+    <ClInclude Include="ChildFrm.h" />
+    <ClInclude Include="ContourDockDlg.h" />
+    <ClInclude Include="CoolStatusBar.h" />
+    <ClInclude Include="CSpGLImgData.h" />
+    <ClInclude Include="DlgAdjustBrightness.h" />
+    <ClInclude Include="DlgAutoChk.h" />
+    <ClInclude Include="DlgColorSet.h" />
+    <ClInclude Include="DlgContourSet.h" />
+    <ClInclude Include="DlgFileControl.h" />
+    <ClInclude Include="DlgGridOption.h" />
+    <ClInclude Include="DlgLastModelList.h" />
+    <ClInclude Include="DlgLayerControl.h" />
+    <ClInclude Include="DlgLayerCut.h" />
+    <ClInclude Include="DlgModelParam.h" />
+    <ClInclude Include="DlgNewVzmSetting.h" />
+    <ClInclude Include="DlgObjectBrowse.h" />
+    <ClInclude Include="DlgOtherOptions.h" />
+    <ClInclude Include="DlgProjectView.h" />
+    <ClInclude Include="DlgSetCurCoord.h" />
+    <ClInclude Include="DlgVctMosaic.h" />
+    <ClInclude Include="DrawDockDlg.h" />
+    <ClInclude Include="g_gloable.h" />
+    <ClInclude Include="InOutputDlg.h" />
+    <ClInclude Include="LayerBatchTranDlg.h" />
+    <ClInclude Include="MainFrm.h" />
+    <ClInclude Include="MapControls.h" />
+    <ClInclude Include="mdisetcursorpage.h" />
+    <ClInclude Include="MdiSnapPage.h" />
+    <ClInclude Include="ObjectParaDockDlg.h" />
+    <ClInclude Include="OptimizeDlg.h" />
+    <ClInclude Include="OutputWnd.h" />
+    <ClInclude Include="PageGridOption.h" />
+    <ClInclude Include="PageSetAlert.h" />
+    <ClInclude Include="Resource.h" />
+    <ClInclude Include="SetRangeDlg.h" />
+    <ClInclude Include="SortListCtrl.h" />
+    <ClInclude Include="SpImgCheckView.h" />
+    <ClInclude Include="SpImgView.h" />
+    <ClInclude Include="SplashWnd.h" />
+    <ClInclude Include="SpSteView.h" />
+    <ClInclude Include="SpVctLateralView.h" />
+    <ClInclude Include="SpVctView.h" />
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="SymbolsPane.h" />
+    <ClInclude Include="TabSheet.h" />
+    <ClInclude Include="targetver.h" />
+    <ClInclude Include="TextDockDlg.h" />
+    <ClInclude Include="TreeCtrlEx.h" />
+    <ClInclude Include="ViewOptionDlg.h" />
+    <ClInclude Include="VirtuoZoMap.h" />
+    <ClInclude Include="VirtuoZoMapDef.h" />
+    <ClInclude Include="VirtuoZoMapDoc.h" />
+    <ClInclude Include="AboutLogo.h" />
+    <ClInclude Include="ProgDlg.h" />
+    <ClInclude Include="DlgSetMZValue.h" />
+    <ClInclude Include="DlgSetCZValue.h" />
+    <ClInclude Include="DlgVectorView.h" />
+    <ClInclude Include="SpVctView2.h" />
+    <ClInclude Include="BCMenu.h" />
+    <ClInclude Include="BtnST.h" />
+    <ClInclude Include="DlgCommonSym.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="VirtuoZoMap.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\VirtuoZoMap.ico" />
+    <None Include="res\VirtuoZoMap.rc2" />
+    <None Include="res\VirtuoZoMapDoc.ico" />
+    <None Include="res\SymLib2006\2000\1111.bmp">
+      <Filter>pic</Filter>
+    </None>
+    <None Include="res\bmp00002.bmp">
+      <Filter>pic</Filter>
+    </None>
+    <None Include="res\111111.bmp">
+      <Filter>pic</Filter>
+    </None>
+    <None Include="res\SymLib2006\2000\2000-1--1-18.bmp">
+      <Filter>pic</Filter>
+    </None>
+    <None Include="res\SymLib2006\2000\2000-2--1-126.bmp">
+      <Filter>pic</Filter>
+    </None>
+    <None Include="res\SymLib2006\2000\2000-2--1-18.bmp">
+      <Filter>pic</Filter>
+    </None>
+    <None Include="res\SymLib2006\2000\2000-2--109-126.bmp">
+      <Filter>pic</Filter>
+    </None>
+    <None Include="res\SymLib2006\2000\2000-2--19-36.bmp">
+      <Filter>pic</Filter>
+    </None>
+    <None Include="res\SymLib2006\2000\2000-2--37-54.bmp">
+      <Filter>pic</Filter>
+    </None>
+    <None Include="res\SymLib2006\2000\2000-2--55-72.bmp">
+      <Filter>pic</Filter>
+    </None>
+    <None Include="res\SymLib2006\2000\2000-2--73-90.bmp">
+      <Filter>pic</Filter>
+    </None>
+    <None Include="res\SymLib2006\2000\2000-2--91-108.bmp">
+      <Filter>pic</Filter>
+    </None>
+    <None Include="res\SymLib2006\2000\2000-3--1-126.bmp">
+      <Filter>pic</Filter>
+    </None>
+    <None Include="res\SymLib2006\2000\2000-3--127-223.bmp">
+      <Filter>pic</Filter>
+    </None>
+    <None Include="res\SymLib2006\2000\2000-4--1-126.bmp">
+      <Filter>pic</Filter>
+    </None>
+    <None Include="res\SymLib2006\2000\2000-4--127-154.bmp">
+      <Filter>pic</Filter>
+    </None>
+    <None Include="res\SymLib2006\2000\2000-5--1-110.bmp">
+      <Filter>pic</Filter>
+    </None>
+    <None Include="res\SymLib2006\2000\2000-6--1-22.bmp">
+      <Filter>pic</Filter>
+    </None>
+    <None Include="res\SymLib2006\2000\2000-6--1-24.bmp">
+      <Filter>pic</Filter>
+    </None>
+    <None Include="res\SymLib2006\2000\2000-7--1-57.bmp">
+      <Filter>pic</Filter>
+    </None>
+    <None Include="res\SymLib2006\2000\2000-8--1-87.bmp">
+      <Filter>pic</Filter>
+    </None>
+    <None Include="res\SymLib2006\2000\2000-9--1-8.bmp">
+      <Filter>pic</Filter>
+    </None>
+    <None Include="res\APERTURE.bmp">
+      <Filter>pic</Filter>
+    </None>
+    <None Include="res\bitmap7.bmp">
+      <Filter>pic</Filter>
+    </None>
+    <None Include="res\bitmap_m.bmp">
+      <Filter>pic</Filter>
+    </None>
+    <None Include="res\cursor.bmp">
+      <Filter>pic</Filter>
+    </None>
+    <None Include="res\drawbar.bmp">
+      <Filter>pic</Filter>
+    </None>
+    <None Include="res\drawbar1.bmp">
+      <Filter>pic</Filter>
+    </None>
+    <None Include="res\filebar_.bmp">
+      <Filter>pic</Filter>
+    </None>
+    <None Include="res\hide.ico">
+      <Filter>pic</Filter>
+    </None>
+    <None Include="res\icon1.ico">
+      <Filter>pic</Filter>
+    </None>
+    <None Include="res\idr_main.ico">
+      <Filter>pic</Filter>
+    </None>
+    <None Include="res\loadbar.bmp">
+      <Filter>pic</Filter>
+    </None>
+    <None Include="res\lock.ico">
+      <Filter>pic</Filter>
+    </None>
+    <None Include="res\logo.bmp">
+      <Filter>pic</Filter>
+    </None>
+    <None Include="res\mainfram.bmp">
+      <Filter>pic</Filter>
+    </None>
+    <None Include="res\modebar.bmp">
+      <Filter>pic</Filter>
+    </None>
+    <None Include="res\modifyba.bmp">
+      <Filter>pic</Filter>
+    </None>
+    <None Include="res\no.ico">
+      <Filter>pic</Filter>
+    </None>
+    <None Include="res\output_wnd.ico">
+      <Filter>pic</Filter>
+    </None>
+    <None Include="res\output_wnd_hc.ico">
+      <Filter>pic</Filter>
+    </None>
+    <None Include="res\properties.bmp">
+      <Filter>pic</Filter>
+    </None>
+    <None Include="res\properties_hc.bmp">
+      <Filter>pic</Filter>
+    </None>
+    <None Include="res\properties_wnd.ico">
+      <Filter>pic</Filter>
+    </None>
+    <None Include="res\properties_wnd_hc.ico">
+      <Filter>pic</Filter>
+    </None>
+    <None Include="res\show.ico">
+      <Filter>pic</Filter>
+    </None>
+    <None Include="res\SkyPhoto-Map.ico">
+      <Filter>pic</Filter>
+    </None>
+    <None Include="res\splash.bmp">
+      <Filter>pic</Filter>
+    </None>
+    <None Include="res\Toolbar.bmp">
+      <Filter>pic</Filter>
+    </None>
+    <None Include="res\toolbar1.bmp">
+      <Filter>pic</Filter>
+    </None>
+    <None Include="res\Toolbar256.bmp">
+      <Filter>pic</Filter>
+    </None>
+    <None Include="res\unlock.ico">
+      <Filter>pic</Filter>
+    </None>
+    <None Include="res\viewbar.bmp">
+      <Filter>pic</Filter>
+    </None>
+    <None Include="res\viewbar1.bmp">
+      <Filter>pic</Filter>
+    </None>
+    <None Include="res\viewbar3.bmp">
+      <Filter>pic</Filter>
+    </None>
+    <None Include="res\VirtuoZoNT.bmp">
+      <Filter>pic</Filter>
+    </None>
+    <None Include="res\VirtuoZoNT1.bmp">
+      <Filter>pic</Filter>
+    </None>
+    <None Include="res\yes.ico">
+      <Filter>pic</Filter>
+    </None>
+    <None Include="res\SymLib2006\5000\5000-1--1-20.bmp">
+      <Filter>pic</Filter>
+    </None>
+    <None Include="res\SymLib2006\5000\5000-2--1-125.bmp">
+      <Filter>pic</Filter>
+    </None>
+    <None Include="res\SymLib2006\5000\5000-3--1-173.bmp">
+      <Filter>pic</Filter>
+    </None>
+    <None Include="res\SymLib2006\5000\5000-4--1- 128.bmp">
+      <Filter>pic</Filter>
+    </None>
+    <None Include="res\SymLib2006\5000\5000-5--1- 66.bmp">
+      <Filter>pic</Filter>
+    </None>
+    <None Include="res\SymLib2006\5000\5000-6--1- 29.bmp">
+      <Filter>pic</Filter>
+    </None>
+    <None Include="res\SymLib2006\5000\5000-7--1- 58.bmp">
+      <Filter>pic</Filter>
+    </None>
+    <None Include="res\SymLib2006\5000\5000-8--1- 83.bmp">
+      <Filter>pic</Filter>
+    </None>
+    <None Include="res\SymLib2006\5000\5000-9--1-13.bmp">
+      <Filter>pic</Filter>
+    </None>
+    <None Include="res\bitmap15.bmp">
+      <Filter>pic</Filter>
+    </None>
+    <None Include="res\SymLib2006\5000\5000-4--1-128.bmp">
+      <Filter>pic</Filter>
+    </None>
+    <None Include="res\SymLib2006\5000\5000-8--1-83.bmp">
+      <Filter>pic</Filter>
+    </None>
+    <None Include="res\SymLib2006\5000\5000-5--1-39.bmp">
+      <Filter>pic</Filter>
+    </None>
+    <None Include="res\SymLib2006\5000\5000-6--1-29.bmp">
+      <Filter>pic</Filter>
+    </None>
+    <None Include="res\SymLib2006\5000\5000-7--1-58.bmp">
+      <Filter>pic</Filter>
+    </None>
+    <None Include="res\statusbar_logo.ico" />
+    <None Include="res\statusbar_logo.bmp">
+      <Filter>pic</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="pic">
+      <UniqueIdentifier>{9e648b00-f34c-4b48-8721-2302ed77f31d}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

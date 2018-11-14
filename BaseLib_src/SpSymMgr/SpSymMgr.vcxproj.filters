@@ -1,0 +1,380 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="源文件">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="头文件">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="资源文件">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ReadMe.txt" />
+    <None Include="SpSymMgr.def">
+      <Filter>源文件</Filter>
+    </None>
+    <None Include="res\SpSymMgr.rc2">
+      <Filter>资源文件</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="SpSymMgr.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="LineFill.cpp">
+      <Filter>头文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Node.cpp">
+      <Filter>头文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Segment.cpp">
+      <Filter>头文件</Filter>
+    </ClCompile>
+    <ClCompile Include="SymLibFile.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="SymInfo.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="SymFillItem.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="SymExplainer.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ReadLine.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="PolyLineElem.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="PolyGonElem.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="PolyAreaElem.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="PointItem.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="PointElem.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Point2D.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="PlotText.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="PieElem.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ParallelLineItem.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="MainSymInfo.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="LineItem.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="LineBaseEx.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="LayInfo.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ItemType.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="FillCircleElem.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="FCodeInfo.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="FCodeIdxSymFile.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ExtentlineEx.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="DirPointItem.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="DirectionLineItem.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ColorFillItem.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ColorFill.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="CircleElem.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ChordElem.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ChinToLetter.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ChinBufMgr.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Chin.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Char.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Buffer.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="BottomLineItem.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="BitmapFile.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="BasicSymLibFile.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="BasicSymInfo.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="BasePolyLineElem.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="BasePointItem.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="BasePieChordElem.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="BaseLineItem.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="BaseElemInfo.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="BaseElemFill.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ArcElem.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Algorithm.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="AffPointItem.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="AffLineItem.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ActObj.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="BaseDirLineItem.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="stdafx.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="targetver.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Resource.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ActObj.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="AffLineItem.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="AffPointItem.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Algorithm.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ArcElem.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="BaseElemFill.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="BaseElemInfo.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="BaseLineItem.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="BasePieChordElem.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="BasePointItem.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="BasePolyLineElem.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="BasicSymInfo.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="BasicSymLibFile.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="BitmapFile.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="BottomLineItem.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Buffer.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Char.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Chin.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ChinBufMgr.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ChinToLetter.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ChordElem.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="CircleElem.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ColorFill.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ColorFillItem.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="DirectionLineItem.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="DirPointItem.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ExtentlineEx.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="FCodeIdxSymFile.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="FCodeInfo.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="FillCircleElem.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Head.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ItemType.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="LayInfo.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="LineBaseEx.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="LineFill.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="LineItem.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="MainSymInfo.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Node.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ParallelLineItem.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="PieElem.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="PlotText.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="PlotTextDef.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Point2D.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="PointElem.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="PointItem.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="PolyAreaElem.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="PolyGonElem.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="PolyLineElem.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ReadLine.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Segment.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="SymEnum.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="SymExplainer.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="SymFillItem.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="SymInfo.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="SymLibFile.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\SpSymMgr.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="BaseDirLineItem.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="SpSymMgr.rc">
+      <Filter>资源文件</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+</Project>

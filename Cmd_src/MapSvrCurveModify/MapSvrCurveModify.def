@@ -1,0 +1,7 @@
+; MapSvrCurveModify.def : Declares the module parameters for the DLL.
+
+;LIBRARY      "MapSvrCurveModify"
+;DESCRIPTION  'StdSpDll Windows Dynamic Link Library'
+
+EXPORTS
+    ; Explicit exports can go here

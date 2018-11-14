@@ -1,0 +1,337 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// 中文(简体，中国) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+LANGUAGE LANG_CHINESE, SUBLANG_CHINESE_SIMPLIFIED
+#pragma code_page(936)
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 4, 2\r\n"
+    "#pragma code_page(936)\r\n"
+    "#endif //_WIN32\r\n"
+    "#include ""res\\MapSvrEdit.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""l.chs\\afxres.rc""          // Standard components\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDR_MENU_POPUP MENU
+BEGIN
+    POPUP "编辑"
+    BEGIN
+        MENUITEM "放弃(&A)",                      ID_EDIT_EXIT
+        MENUITEM SEPARATOR
+        MENUITEM "移动(&M)",                      ID_EDIT_MOVE
+        MENUITEM "删除(&D)",                      ID_EDIT_DEL
+        MENUITEM "坐标(&O)",                      ID_EDIT_COORD
+        MENUITEM "延长前段(&P)",                    ID_EDIT_EXTEND_PREV
+        MENUITEM "延长后段(&N)",                    ID_EDIT_EXTEND_NEXT
+        MENUITEM SEPARATOR
+        MENUITEM "插入(&I)",                      ID_EDIT_INSERT
+        MENUITEM "连接(&C)",                      ID_EDIT_CONNECT
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_DIALOG_COORD DIALOGEX 0, 0, 102, 98
+STYLE DS_SETFONT | WS_POPUP | WS_CAPTION
+EXSTYLE WS_EX_TOOLWINDOW
+CAPTION "设置曲线坐标"
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "确定",IDOK,13,73,30,13
+    LTEXT           "X:",IDC_STATIC,13,18,8,8
+    EDITTEXT        IDC_XGCoord,25,15,63,14,ES_AUTOHSCROLL
+    LTEXT           "Y:",IDC_STATIC,13,36,8,8
+    EDITTEXT        IDC_YGCoord,25,33,63,14,ES_AUTOHSCROLL
+    LTEXT           "Z:",IDC_STATIC,13,54,8,8
+    EDITTEXT        IDC_ZGCoord,25,51,64,14,ES_AUTOHSCROLL
+    GROUPBOX        "",IDC_STATIC,7,3,88,88
+    PUSHBUTTON      "取消",IDCANCEL,59,73,30,13
+END
+
+IDD_DIALOG_CHANGECD DIALOGEX 0, 0, 161, 23
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+EXSTYLE WS_EX_TOOLWINDOW
+CAPTION "选择连接类型"
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    PUSHBUTTON      "点",IDC_POINTS,0,0,23,23,BS_ICON
+    PUSHBUTTON      "点",IDC_LINE,23,0,23,23,BS_ICON
+    PUSHBUTTON      "点",IDC_CURVE,46,0,23,23,BS_ICON
+    PUSHBUTTON      "点",IDC_CIRCLE,69,0,23,23,BS_ICON
+    PUSHBUTTON      "点",IDC_ARC,92,0,23,23,BS_ICON
+    PUSHBUTTON      "点",IDC_SYNCH,115,0,23,23,BS_ICON
+    PUSHBUTTON      "点",IDC_HIDE,138,0,23,23,BS_ICON
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO
+BEGIN
+    IDD_DIALOG_COORD, DIALOG
+    BEGIN
+    END
+
+    IDD_DIALOG_CHANGECD, DIALOG
+    BEGIN
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+ICO_LTBUTTON_CIRCLE     ICON                    "res\\ltbu_cir.ico"
+ICO_LTBUTTON_SYNCH      ICON                    "res\\ltbu_syn.ico"
+ICO_LTBUTTON_POINT      ICON                    "res\\ltbu_pnt.ico"
+ICO_LTBUTTON_LINE       ICON                    "res\\ltbu_lin.ico"
+ICO_LTBUTTON_HIDE       ICON                    "res\\ltbu_hid.ico"
+ICO_LTBUTTON_CURVE      ICON                    "res\\ltbu_cur.ico"
+ICO_LTBUTTON_ARC        ICON                    "res\\ltbu_arc.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE
+BEGIN
+    ID_EDIT_MOVE            "移动\n移动"
+    IDS_LAYER_LOCK          "地物 %d , 属于 %s 层 , 已被锁 , 继续下一个地物 "
+    IDS_LAYER_HIDE          "地物 %d , 属于 %s 层 , 已被隐藏 , 继续下一个地物 "
+    IDS_OBJ_OVER            "已遍历完毕，无下一个地物"
+    IDS_SELECT_PT           "选中地物上的点 %d   坐标( x : %.2lf   y : %.2lf   z : %.2lf )"
+    IDS_MODIFY_PT           "移动节点( dx : %.2lf  dy : %.2lf  dz : %.2lf )"
+END
+
+#endif    // 中文(简体，中国) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// 英语(美国) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDR_MENU_POPUP MENU
+BEGIN
+    POPUP "EDIT_OBJECT"
+    BEGIN
+        MENUITEM "E&xit",                       ID_EDIT_EXIT
+        MENUITEM SEPARATOR
+        MENUITEM "&Move",                       ID_EDIT_MOVE
+        MENUITEM "&Delete",                     ID_EDIT_DEL
+        MENUITEM "C&oord",                      ID_EDIT_COORD
+        MENUITEM "Extend &Prev",                ID_EDIT_EXTEND_PREV
+        MENUITEM "Extend &Next",                ID_EDIT_EXTEND_NEXT
+        MENUITEM SEPARATOR
+        MENUITEM "&Insert",                     ID_EDIT_INSERT
+        MENUITEM "&Connect",                    ID_EDIT_CONNECT
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_DIALOG_COORD DIALOGEX 0, 0, 102, 99
+STYLE DS_SETFONT | WS_POPUP | WS_CAPTION
+EXSTYLE WS_EX_TOOLWINDOW
+CAPTION "Set Cur Coord"
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,15,73,32,13
+    LTEXT           "X:",IDC_STATIC,12,17,8,8
+    EDITTEXT        IDC_XGCoord,24,15,63,14,ES_AUTOHSCROLL
+    LTEXT           "Y:",IDC_STATIC,12,35,8,8
+    EDITTEXT        IDC_YGCoord,24,33,63,14,ES_AUTOHSCROLL
+    LTEXT           "Z:",IDC_STATIC,12,53,8,8
+    EDITTEXT        IDC_ZGCoord,24,51,63,14,ES_AUTOHSCROLL
+    GROUPBOX        "",IDC_STATIC,7,4,88,88
+    PUSHBUTTON      "Cancel",IDCANCEL,55,73,32,13
+END
+
+IDD_DIALOG_CHANGECD DIALOGEX 0, 0, 161, 23
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+EXSTYLE WS_EX_TOOLWINDOW
+CAPTION "Select Conect Type"
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    PUSHBUTTON      "point",IDC_POINTS,0,0,23,23,BS_ICON
+    PUSHBUTTON      "point",IDC_LINE,23,0,23,23,BS_ICON
+    PUSHBUTTON      "point",IDC_CURVE,46,0,23,23,BS_ICON
+    PUSHBUTTON      "point",IDC_CIRCLE,69,0,23,23,BS_ICON
+    PUSHBUTTON      "point",IDC_ARC,92,0,23,23,BS_ICON
+    PUSHBUTTON      "point",IDC_SYNCH,115,0,23,23,BS_ICON
+    PUSHBUTTON      "point",IDC_HIDE,138,0,23,23,BS_ICON
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO
+BEGIN
+    IDD_DIALOG_CHANGECD, DIALOG
+    BEGIN
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,0,0,1
+ PRODUCTVERSION 1,0,0,1
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x2L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904b0"
+        BEGIN
+            VALUE "CompanyName", "Supresoft Inc."
+            VALUE "FileDescription", "MapSvrEdit DLL"
+            VALUE "FileVersion", "1, 0, 0, 1"
+            VALUE "InternalName", "MapSvrEdit"
+            VALUE "LegalCopyright", "Copyright (C) 2013 Supresoft Inc."
+            VALUE "OriginalFilename", "MapSvrEdit.DLL"
+            VALUE "ProductName", "MapSvrEdit Dynamic Link Library"
+            VALUE "ProductVersion", "1, 0, 0, 1"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1200
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE
+BEGIN
+    ID_EDIT_MOVE            "Move\nMove"
+    IDS_LAYER_LOCK          "Object is locked(ele : %d , code : %s), continue."
+    IDS_LAYER_HIDE          "Object is hidden(ele: %d , code : %s), continue."
+    IDS_OBJ_OVER            "Search to end."
+    IDS_SELECT_PT           "Select point %d,  coordinate( x : %.2lf   y : %.2lf   z : %.2lf )"
+    IDS_MODIFY_PT           "Move point( dx : %.2lf  dy : %.2lf  dz : %.2lf )"
+END
+
+#endif    // 英语(美国) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+#ifdef _WIN32
+LANGUAGE 4, 2
+#pragma code_page(936)
+#endif //_WIN32
+#include "res\MapSvrEdit.rc2"  // non-Microsoft Visual C++ edited resources
+#include "l.chs\afxres.rc"          // Standard components
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+
