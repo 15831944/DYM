@@ -88,6 +88,10 @@ public:
 	CGrowSelfAryPtr<double> m_lineCMY;
 	CGrowSelfAryPtr<double> m_lineCMZ;
 
+	CGrowSelfAryPtr<double> m_lineDoubleditchX;
+	CGrowSelfAryPtr<double> m_lineDoubleditchY;
+	CGrowSelfAryPtr<double> m_lineDoubleditchZ;
+
 protected:
 
 	bool m_bBlock; //是否是输出block信息
@@ -285,6 +289,19 @@ public:
 	//滑槽-依比例
 	bool isHuacao();
 	void Huacao();
+
+	//导线点
+	bool isDaoxiandian();
+	void Daoxiandian();
+
+	//220600_0 半比例输水槽
+	bool isHalfshushui();
+	void Halfshushui();
+
+	//221000_0 双线干沟
+	bool isDoubleditch();
+	void Doubleditch();
+
 
 	bool isSpecialFeature();
 	map<CString,CString> mapCass; // 保存地物类型比如 JMD [6/7/2018 jobs]

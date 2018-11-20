@@ -1294,7 +1294,8 @@ LRESULT    CMainFrame::OnSvrMsgOutPut( WPARAM wParam,LPARAM lParam )
 					if ( curobj->GetPtsum() != 0 )
 					{
 						curobj->GetPt(0, &pt);
-						OnInputMsg(Set_DrizeHeight, (LPARAM)&pt.z);
+						GPoint gpt; gpt.z = pt.z;
+						OnInputMsg(Set_DrizeHeight, (LPARAM)&gpt);
 					}
 					delete curobj;
 				}
@@ -1377,7 +1378,8 @@ LRESULT    CMainFrame::OnSvrMsgOutPut( WPARAM wParam,LPARAM lParam )
 			{
 				theApp.SendMsgToAllView(WM_INPUT_MSG, Set_Cursor, lParam);
 				double z = ((GPoint *)lParam)->z;
-				theApp.SendMsgToAllView(WM_INPUT_MSG, Set_DrizeHeight, LPARAM(&z));
+				GPoint gpt; gpt.z = z;
+				theApp.SendMsgToAllView(WM_INPUT_MSG, Set_DrizeHeight, LPARAM(&gpt));
 			}
 			break;
 		case mf_SetViewZ:

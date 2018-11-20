@@ -501,7 +501,7 @@ void  CExportCass::PlotPointCass(double x, double y,double z)
 //CASS9
 	if (strcmp(m_CurLayer,"KZD") == 0 )
 	{
-		fprintf(m_fp,"%s,1\n", m_curCassBM);// 实体编码，比例 [6/8/2018 jobs] 
+		fprintf(m_fp,"%s,0.00\n", m_curCassBM);// 实体编码，比例 [6/8/2018 jobs] 
 	}else
 		fprintf(m_fp,"%s,0.00\n", m_curCassBM);//实体编码，角度  //  [6/8/2018 jobs]
 
@@ -514,7 +514,21 @@ void  CExportCass::PlotPointCass(double x, double y,double z)
 	//  [6/13/2018 jobs]
 	if (strcmp(m_CurLayer,"KZD") == 0 )
 	{
-
+		fprintf(m_fp,"UNAME,0:\n");
+		fprintf(m_fp,"DH,0:\n");
+		fprintf(m_fp,"LX,0:\n");
+		fprintf(m_fp,"ZBX,0:\n");
+		fprintf(m_fp,"GCJZ,0:\n");
+		fprintf(m_fp,"DDWD,3:\n");
+		fprintf(m_fp,"DDJD,3:\n");
+		fprintf(m_fp,"DDG,3:\n");
+		fprintf(m_fp,"CLFF,0:\n");
+		fprintf(m_fp,"TWWD,0:\n");
+		fprintf(m_fp,"TWJD,0:\n");
+		fprintf(m_fp,"YCZ,0:\n");
+		fprintf(m_fp,"TWFWJ,3:\n");
+		fprintf(m_fp,"SJY,0:\n");
+		fprintf(m_fp,"GXRQ,0:\n");
 	}else if (strcmp(m_CurLayer,"GCD") == 0 )
 	{
 		fprintf(m_fp,"UNAME,0:\n");
@@ -582,6 +596,7 @@ void  CExportCass::PlotPointCass(double x, double y,double z)
 
 	fprintf(m_fp,"e\nNil\n");
 } 
+
 
 void  CExportCass::PlotTextCass(double x,double y,double z,
 	double height,double ang,const char *str,double slantAng) 
@@ -1303,7 +1318,7 @@ void CExportCass::LoadCass()
 	mapCass.insert(std::make_pair("510402_0", "GXYZ"));//	GXYZ==510402 
 	mapCass.insert(std::make_pair("510306_0", "GXYZ"));//	GXYZ==510306 
 
-
+	mapCass.insert(std::make_pair("510302_0", "assist"));//	电线架	171400-1	GXYZ	510302
 
 	mapCass.insert(std::make_pair("710101_0", "DGX"));//	DGX==710101 
 	mapCass.insert(std::make_pair("710102_0", "DGX"));//	DGX==710102 
@@ -1421,6 +1436,7 @@ void CExportCass::LoadCassBM()
 	mapCassBM.insert(std::make_pair("720100_0", "202101")); //一般高程点	202101	GCD			720100
 	mapCassBM.insert(std::make_pair("110102_0", "131100"));//三角点	131100	KZD				110102
 	mapCassBM.insert(std::make_pair("110103_0", "131700"));//埋石图根点	131700	KZD			110103
+	mapCassBM.insert(std::make_pair("110103_1", "131900"));//图根点-土堆理石	131900	KZD			110103
 	mapCassBM.insert(std::make_pair("110103_2", "131800"));//不埋石图根点	131800	KZD			110103
 	mapCassBM.insert(std::make_pair("110104_0", "131200"));//土堆上的三角点	131200	KZD		110104
 	mapCassBM.insert(std::make_pair("110105_0", "131300"));//小三角点	131300	KZD				110105
@@ -1429,6 +1445,7 @@ void CExportCass::LoadCassBM()
 	mapCassBM.insert(std::make_pair("110108_0", "131600"));//土堆上的导线点	131600	KZD		110108
 	mapCassBM.insert(std::make_pair("110202_0", "132100"));//水准点	132100	KZD				110202
 	mapCassBM.insert(std::make_pair("110301_0", "133000"));//GPS控制点	133000	KZD			110301
+	mapCassBM.insert(std::make_pair("110302_0", "133000"));//卫星定位等级点	133000	KZD			110301
 	mapCassBM.insert(std::make_pair("110402_0", "134100"));//天文点	134100	KZD				110402
 	
 	
@@ -1441,9 +1458,10 @@ void CExportCass::LoadCassBM()
 	mapCassBM.insert(std::make_pair("310301_0", "141101"));//	一般房屋	141101	JMD	310301
 	//mapCassBM.insert(std::make_pair(110402, 134100));//	小比例尺房屋	141103	JMD	
 	mapCassBM.insert(std::make_pair("310301_1", "141200"));//	简单房屋	141200	JMD	
-	mapCassBM.insert(std::make_pair("310301_2", "158800"));// 改为厕所	141200	JMD	
+	mapCassBM.insert(std::make_pair("310301_2", "158800"));// 改为厕所	141200	DLDW	
 	//mapCassBM.insert(std::make_pair(110402, 134100));//	简单房屋斜线	141200-1	JMD	
 	mapCassBM.insert(std::make_pair("310302_0", "141300"));//	建筑房屋	141300	JMD	310302
+	mapCassBM.insert(std::make_pair("310400_0", "141104"));//	突出房屋	141104	JMD	310400
 	mapCassBM.insert(std::make_pair("310700_0", "141400"));//	破坏房屋	141400	JMD	310700
 	mapCassBM.insert(std::make_pair("310600_0", "141500"));//	棚房	141500	JMD	310600
 //	mapCassBM.insert(std::make_pair("310600_1", "141500"));//	一边有墙的棚房	141500	JMD	310600
@@ -1594,6 +1612,7 @@ void CExportCass::LoadCassBM()
 	mapCassBM.insert(std::make_pair("261000_0", "153801"));//	高于地面水池	153801	DLDW	261000
 	mapCassBM.insert(std::make_pair("261000_1", "153802"));//	低于地面水池	153802	DLDW	
 	mapCassBM.insert(std::make_pair("261000_2", "153803"));//	有盖的水池	153803	DLDW	
+	mapCassBM.insert(std::make_pair("261000_3", "153804"));//	坎边有盖的水池	153804	DLDW	
 	//mapCassBM.insert(std::make_pair(110402, 134100));//	有盖的水池辅助线	153803-1	DLDW	
 	mapCassBM.insert(std::make_pair("330606_0", "153901"));//	依比例肥气池	153901	DLDW	330606
 	mapCassBM.insert(std::make_pair("330606_1", "153902"));//	不依比例肥气池	153902	DLDW	
@@ -1765,7 +1784,7 @@ void CExportCass::LoadCassBM()
 	//mapCassBM.insert(std::make_pair(110402, 134100));//	建筑中等级公路	163500	DLSS	
 	//mapCassBM.insert(std::make_pair(110402, 134100));//	建筑中等外公路	163600	DLSS	
 	//mapCassBM.insert(std::make_pair(110402, 134100));//	大车路虚线边	164100	DLSS	
-	//mapCassBM.insert(std::make_pair(110402, 134100));//	大车路实线边	164110	DLSS	
+	mapCassBM.insert(std::make_pair("440100_0", "164110"));//	大车路实线边	164110	DLSS	
 	//mapCassBM.insert(std::make_pair(110402, 134100));//	依比例乡村路虚线	164201	DLSS	
 	mapCassBM.insert(std::make_pair("420400_0", "164211"));//	依比例乡村路实线	164211	DLSS	
 	mapCassBM.insert(std::make_pair("420400_1", "164202"));//	不依比例乡村路	164202	DLSS	
@@ -1891,6 +1910,11 @@ void CExportCass::LoadCassBM()
 	mapCassBM.insert(std::make_pair("460504_0", "169004"));//	旋涡	169004	DLSS	460504
 	//mapCassBM.insert(std::make_pair(110402, 134100));//	旋涡范围线	169014	DLSS	
 	mapCassBM.insert(std::make_pair("260600_0", "169005"));//	岸滩.水中滩	169005	DLSS	260600
+
+	mapCassBM.insert(std::make_pair("260600_1", "187221"));//	水中滩石滩	187221	DLSS	260600
+	mapCassBM.insert(std::make_pair("260600_2", "187230"));//	 水中滩沙泥滩	187230	DLSS	260600
+	mapCassBM.insert(std::make_pair("260600_3", "187240"));//	水中滩砂砾滩	187240	DLSS	260600
+
 	//mapCassBM.insert(std::make_pair(110402, 134100));//	石滩符号	169006	DLSS	
 	mapCassBM.insert(std::make_pair("510202_0", "171101"));//	地面上的输电线骨架线	171101	ASSIST	
 	//mapCassBM.insert(std::make_pair(110402, 134100));//	地面上的输电线电杆	171101-1	GXYZ	
@@ -1911,7 +1935,7 @@ void CExportCass::LoadCassBM()
 	mapCassBM.insert(std::make_pair("510304_0", "171203"));//	配电线电缆标	171203	GXYZ	510304
 	mapCassBM.insert(std::make_pair("510301_0", "171300"));//	电杆	171300	GXYZ	510301
 	//mapCassBM.insert(std::make_pair(110402, 134100));//	电线架骨架线	171400	ASSIST	
-	//mapCassBM.insert(std::make_pair(110402, 134100));//	电线架	171400-1	GXYZ	510302
+	mapCassBM.insert(std::make_pair("510302_0", "171400"));//	电线架	171400-1	GXYZ	510302
 	//mapCassBM.insert(std::make_pair(110402, 134100));//	电线架电杆	171400-2	GXYZ	
 	mapCassBM.insert(std::make_pair("510303_0", "171501"));//	依比例电线塔	171501	GXYZ	510303
 	//mapCassBM.insert(std::make_pair(110402, 134100));//	依比例电线塔斜线	171501-1	GXYZ	
@@ -1983,59 +2007,101 @@ void CExportCass::LoadCassBM()
 	mapCassBM.insert(std::make_pair("543007_0", "175200"));//	消火栓	175200	GXYZ	543007
 	mapCassBM.insert(std::make_pair("543006_1", "175300"));//	阀门	175300	GXYZ	
 	mapCassBM.insert(std::make_pair("543006_0", "175400"));//	水龙头	175400	GXYZ	543006
-	mapCassBM.insert(std::make_pair("210101_1", "181101"));//	常年河水涯线	181101	SXSS	210101 cass中为point,dym中为线段
+	mapCassBM.insert(std::make_pair("210101_0", "181101"));//	常年河水涯线	181101	SXSS	210101 cass中为point,dym中为线段
+	mapCassBM.insert(std::make_pair("210101_1", "181102"));//	高水界	181101	SXSS	210101 cass中为point,dym中为线段
+	mapCassBM.insert(std::make_pair("210102_0", "181102"));//	地下河段-常年河	
+	mapCassBM.insert(std::make_pair("210102_1", "181106"));//	单线渐变河流	
 	//mapCassBM.insert(std::make_pair(110402, 134100));//	高水界	181102	SXSS	
 	mapCassBM.insert(std::make_pair("261301_0", "181103"));//	流向	181103	SXSS	261301
 	mapCassBM.insert(std::make_pair("261303_0", "181104"));//	涨潮	181104	SXSS	261303
 	mapCassBM.insert(std::make_pair("261303_1", "181105"));//	落潮	181105	SXSS	
 	mapCassBM.insert(std::make_pair("210200_0", "181200"));//	时令河	181200	SXSS	210200
+	mapCassBM.insert(std::make_pair("210200_1", "181201"));//	单线渐变时令河	181200	SXSS	210200
 	mapCassBM.insert(std::make_pair("210104_0", "181300"));//	消失河段	181300	SXSS	210104
-	mapCassBM.insert(std::make_pair("210103_0", "181410"));//	地下河段.渠段入口	181410	SXSS	210103
-	mapCassBM.insert(std::make_pair("220303_0", "181420"));//	已明流路地下河段.渠段	181420	SXSS	220303
+	mapCassBM.insert(std::make_pair("210103_0", "181410"));//	地下河段出入口-非	181410	SXSS	210103
+	mapCassBM.insert(std::make_pair("210103_1", "181410"));//	地下河段.渠段入口	181410	SXSS	210103
+	mapCassBM.insert(std::make_pair("210301_0", "181420"));//	已明流路地下河段.渠段	181420	SXSS	220303
 	mapCassBM.insert(std::make_pair("230101_0", "182100"));//	常年湖	182100	SXSS	230101
 	mapCassBM.insert(std::make_pair("230200_0", "182200"));//	时令湖	182200	SXSS	230200
-	//mapCassBM.insert(std::make_pair("240101_0", "182300"));//	水库水边线	182300	SXSS	240101
+	mapCassBM.insert(std::make_pair("240101_0", "182300"));//	水库水边线	182300	SXSS	240101
+	mapCassBM.insert(std::make_pair("240101_1", "182361"));//	水库拦水坝	182300	SXSS	240101
+	mapCassBM.insert(std::make_pair("240101_2", "182361"));//	水库堤坝	182300	SXSS	240101
+	mapCassBM.insert(std::make_pair("240102_0", "182350"));//	建筑中水库	182300	SXSS	240101
+	mapCassBM.insert(std::make_pair("240200_0", "182311"));//	水库溢洪道	182311	SXSS	
+	mapCassBM.insert(std::make_pair("240300_0", "182340"));//	水库泄洪洞	182340	SXSS	
 	//mapCassBM.insert(std::make_pair(110402, 134100));//	水库溢洪道右边	182311	SXSS	
 	//mapCassBM.insert(std::make_pair(110402, 134100));//	水库溢洪道左边	182312	SXSS	
 	//mapCassBM.insert(std::make_pair(110402, 134100));//	水库引水孔	182330	SXSS	
-	//mapCassBM.insert(std::make_pair("230102_0", "182401"));//	有坎池塘	182401	SXSS	230102
+	mapCassBM.insert(std::make_pair("230102_1", "182401"));//	有坎池塘	182401	SXSS	230102
 	mapCassBM.insert(std::make_pair("230102_0", "182402"));//	无坎池塘	182402	SXSS	
 	mapCassBM.insert(std::make_pair("261302_1", "183101"));//	一般单线沟渠	183101	SXSS	261302
 	mapCassBM.insert(std::make_pair("261302_0", "183102"));//	一般双线沟渠	183102	SXSS	
 	//mapCassBM.insert(std::make_pair("270102_0", "183210"));//	单层沟渠堤岸	183210	SXSS	270102
 	//mapCassBM.insert(std::make_pair(110402, 134100));//	双层沟渠堤岸右边	183221	SXSS	
 	//mapCassBM.insert(std::make_pair(110402, 134100));//	双层沟渠堤岸左边	183222	SXSS	
+	mapCassBM.insert(std::make_pair("220305_0", "183300"));//	沟渠未加固	183300	SXSS	220305
+	mapCassBM.insert(std::make_pair("220305_1", "183310"));//	沟渠已加固	183300	SXSS	220305
 	mapCassBM.insert(std::make_pair("220305_2", "183300"));//	沟渠沟堑	183300	SXSS	220305
 	mapCassBM.insert(std::make_pair("220303_0", "183400"));//	地下灌渠	183400	SXSS	220303
 	mapCassBM.insert(std::make_pair("220304_0", "183401"));//	地下灌渠出水口	183401	SXSS	
 	//mapCassBM.insert(std::make_pair(110402, 134100));//	双线干沟右边	183501	SXSS	
 	//mapCassBM.insert(std::make_pair(110402, 134100));//	双线干沟左边	183502	SXSS	
-	//mapCassBM.insert(std::make_pair(110402, 134100));//	单线干沟	183503	SXSS	
-	//mapCassBM.insert(std::make_pair(110402, 134100));//	依比例通车水闸骨架线	184101	ASSIST	
+
+	mapCassBM.insert(std::make_pair("250411_0", "186590"));//	潮水沟	186590	SXSS	
+	mapCassBM.insert(std::make_pair("250410_0", "186580"));//	干出滩中河道	186580	SXSS	
+	mapCassBM.insert(std::make_pair("250700_0", "187100"));//	海岛	187100	SXSS	
+	mapCassBM.insert(std::make_pair("250406_0", "186530"));//	沙泥滩	186530	SXSS	
+	mapCassBM.insert(std::make_pair("250502_0", "186900"));//	危险海区	186900	SXSS	
+	mapCassBM.insert(std::make_pair("250403_0", "186551"));//	岩石滩	186551	SXSS	
+	mapCassBM.insert(std::make_pair("260500_0", "187340"));//	岸滩泥滩	187340	SXSS	
+	mapCassBM.insert(std::make_pair("260500_1", "187310"));//	岸滩沙泥滩	187310	SXSS	
+	mapCassBM.insert(std::make_pair("260500_2", "187321"));//	岸滩砂砾滩石块	187321	SXSS	
+	mapCassBM.insert(std::make_pair("260500_3", "187320"));//	岸滩沙砾滩	187320	SXSS	
+	mapCassBM.insert(std::make_pair("260500_4", "187330"));//	岸滩沙滩	187330	SXSS	
+
+	mapCassBM.insert(std::make_pair("260601_0", "187400"));//	沙洲	187400	SXSS	
+	mapCassBM.insert(std::make_pair("250605_0", "186850"));//	珊瑚礁	186850	SXSS	
+	
+	
+
+	mapCassBM.insert(std::make_pair("221000_1", "183503"));//	单线干沟	183503	SXSS	
+	mapCassBM.insert(std::make_pair("221000_0", "183501"));//	双线干沟	183501	SXSS	
+
+	mapCassBM.insert(std::make_pair("270201_0", "184101"));//	依比例通车水闸骨架线	184101	ASSIST	
 	//mapCassBM.insert(std::make_pair(110402, 134100));//	依比例通车水闸线	184101-1	SXSS	270201
-	//mapCassBM.insert(std::make_pair(110402, 134100));//	依比例不通车水闸骨架线	184102	ASSIST	
+	mapCassBM.insert(std::make_pair("270201_1", "184102"));//	依比例不通车水闸骨架线	184102	ASSIST	
 	//mapCassBM.insert(std::make_pair(110402, 134100));//	依比例不通车水闸线	184102-1	SXSS	
-	//mapCassBM.insert(std::make_pair(110402, 134100));//	不依比例能走人水闸	184103	SXSS	
-	//mapCassBM.insert(std::make_pair(110402, 134100));//	不依比例不能走人水闸	184104	SXSS	
-	//mapCassBM.insert(std::make_pair(110402, 134100));//	水闸房屋	184105	SXSS	
+
+	mapCassBM.insert(std::make_pair("270201_2", "184111"));//能通车水闸	184111	SXSS	
+	mapCassBM.insert(std::make_pair("270201_3", "184112"));//	不能通车水闸	184104	SXSS	
+	mapCassBM.insert(std::make_pair("270201_4", "184104"));//	不能走人水闸	184104	SXSS	
+
+	mapCassBM.insert(std::make_pair("270202_0", "184121"));//	能通车船闸	184121	SXSS	
+	mapCassBM.insert(std::make_pair("270202_1", "184122"));//	不能通车船闸	184104	SXSS	
+	mapCassBM.insert(std::make_pair("270202_2", "184123"));//	不能走人船闸 	184104	SXSS	
+
+	mapCassBM.insert(std::make_pair("270201_5", "184105"));//	水闸房屋	184105	SXSS	
 	//mapCassBM.insert(std::make_pair(110402, 134100));//	滚水坝(虚线)	184201	SXSS	
 	mapCassBM.insert(std::make_pair("270500_0", "184202"));//	滚水坝(坎线)	184202	SXSS	270500
-	//mapCassBM.insert(std::make_pair("184301", "184301"));//	拦水坝右边	184301	SXSS	270600
+	mapCassBM.insert(std::make_pair("270600_1", "184301"));//	拦水坝	184301	SXSS	270600
 	//mapCassBM.insert(std::make_pair(110402, 134100));//	拦水坝左边	184302	SXSS	
 	mapCassBM.insert(std::make_pair("270700_0", "184410"));//	斜坡式防波堤	184410	SXSS	270700
-	//mapCassBM.insert(std::make_pair(110402, 134100));//	直立式防波堤	184420	SXSS	
-	//mapCassBM.insert(std::make_pair(110402, 134100));//	石垄式防波堤	184430	SXSS	
+	mapCassBM.insert(std::make_pair("270700_1", "184430"));//	石垄式防波堤	184420	SXSS	
+	mapCassBM.insert(std::make_pair("270700_2", "184420"));//	直立式防波堤	184430	SXSS	
 	mapCassBM.insert(std::make_pair("270801_0", "184510"));//	防洪墙	184510	SXSS	270801
+	mapCassBM.insert(std::make_pair("270801_1", "184550"));//	一般加固岸	184510	SXSS	270801
+	mapCassBM.insert(std::make_pair("270801_2", "184541"));//	斜坡式有栅栏加固岸	184510	SXSS	270801
+	mapCassBM.insert(std::make_pair("270801_3", "184542"));//	直立式有栅栏加固岸	184542	SXSS	270801
 	//mapCassBM.insert(std::make_pair(110402, 134100));//	防洪墙边线	184510-1	SXSS	
 	//mapCassBM.insert(std::make_pair(110402, 134100));//	防洪墙横线	184510-2	SXSS	
-	//mapCassBM.insert(std::make_pair(110402, 134100));//	直立式防洪墙	184520	SXSS	
+	mapCassBM.insert(std::make_pair("270803_0", "184520"));//	直立式防洪墙	184520	SXSS	
 	//mapCassBM.insert(std::make_pair(110402, 134100));//	直立式防洪墙边线	184520-1	SXSS	
 	//mapCassBM.insert(std::make_pair(110402, 134100));//	直立式防洪墙横线	184520-2	SXSS	
-	//mapCassBM.insert(std::make_pair(110402, 134100));//	有栏杆的防洪墙	184530	SXSS	
+	mapCassBM.insert(std::make_pair("270803_1", "184530"));//	有栏杆的防洪墙	184530	SXSS	
 	//mapCassBM.insert(std::make_pair(110402, 134100));//	有栏杆的防洪墙边线	184530-1	SXSS	
 	//mapCassBM.insert(std::make_pair(110402, 134100));//	有栏杆的防洪墙细横线	184530-2	SXSS	
 	//mapCassBM.insert(std::make_pair(110402, 134100));//	有栏杆的防洪墙粗横线	184530-3	SXSS	
-	//mapCassBM.insert(std::make_pair(110402, 134100));//	有栏杆的直立式防洪墙	184531	SXSS	
+	mapCassBM.insert(std::make_pair("270803_2", "184531"));//	有栏杆的直立式防洪墙	184531	SXSS	
 	//mapCassBM.insert(std::make_pair(110402, 134100));//	有栏杆的直立式防洪墙边线	184531-1	SXSS	
 	//mapCassBM.insert(std::make_pair(110402, 134100));//	有栏杆的直立式防洪墙细横线	184531-2	SXSS	
 	//mapCassBM.insert(std::make_pair(110402, 134100));//	有栏杆的直立式防洪墙粗横线	184531-3	SXSS	
@@ -2050,14 +2116,21 @@ void CExportCass::LoadCassBM()
 	//mapCassBM.insert(std::make_pair(110402, 134100));//	带柱的输水槽边线	184710-1	SXSS	
 	//mapCassBM.insert(std::make_pair(110402, 134100));//	带柱的输水槽短线	184710-2	SXSS	
 	//mapCassBM.insert(std::make_pair(110402, 134100));//	带柱的输水槽支柱	184710-3	SXSS	
-	//mapCassBM.insert(std::make_pair(110402, 134100));//	不带柱的输水槽骨架线	184720	ASSIST	
+	//mapCassBM.insert(std::make_pair(110402, 134100));//	不带柱的输水槽骨架线	184720	ASSIST
 	//mapCassBM.insert(std::make_pair(110402, 134100));//	不带柱的输水槽边线	184720-1	SXSS	
 	//mapCassBM.insert(std::make_pair(110402, 134100));//	不带柱的输水槽短线	184720-2	SXSS	
-	//mapCassBM.insert(std::make_pair("220800_0", "184810"));//	倒虹吸通道	184810	SXSS	220800
+	mapCassBM.insert(std::make_pair("220600_0", "184721"));//	半依比例输水槽	184721	SXSS	220600
+	mapCassBM.insert(std::make_pair("220700_0", "184730"));//	输水隧道	184721	SXSS	220700
+	mapCassBM.insert(std::make_pair("220700_1", "184731"));//	输水隧道入口	184721	SXSS	220700
+	mapCassBM.insert(std::make_pair("220700_2", "184731"));//	输水隧道入口单	184721	SXSS	220700
+	mapCassBM.insert(std::make_pair("220800_1", "184810"));//	倒虹吸通道	184810	SXSS	220800
 	mapCassBM.insert(std::make_pair("220800_0", "184820"));//	倒虹吸入水口	184820	SXSS	
+
+	mapCassBM.insert(std::make_pair("260701_0", "185110"));//	地热井	185110	SXSS
 	mapCassBM.insert(std::make_pair("260800_0", "185101"));//	依比例水井	185101	SXSS	
 	mapCassBM.insert(std::make_pair("260800_1", "185102"));//	水井	185102	SXSS	260800
-	mapCassBM.insert(std::make_pair("220400_0", "185200"));//	坎儿井	185200	SXSS	220400
+	//mapCassBM.insert(std::make_pair("220400_0", "185200"));//	坎儿井	185200	SXSS	220400
+	mapCassBM.insert(std::make_pair("220400_0", "185201"));//	坎儿井竖井	185200	SXSS	220400 
 	mapCassBM.insert(std::make_pair("260700_0", "185300"));//	泉	185300	SXSS	260700
 	mapCassBM.insert(std::make_pair("261100_0", "185400"));//	瀑布.跌水	185400	SXSS	261100
 	mapCassBM.insert(std::make_pair("270804_0", "185510"));//	土质的有滩陡岸	185510	SXSS	270804
@@ -2073,27 +2146,32 @@ void CExportCass::LoadCassBM()
 	//mapCassBM.insert(std::make_pair(110402, 134100));//	水深点小数	186412	SXSS	
 	mapCassBM.insert(std::make_pair("250401_0", "186510"));//	沙滩	186510	SXSS	250401
 	mapCassBM.insert(std::make_pair("250402_0", "186521"));//	沙砾滩石块	186521	SXSS	250402
+	mapCassBM.insert(std::make_pair("250402_1", "187240"));//	沙砾滩	186521	SXSS	250402
+	mapCassBM.insert(std::make_pair("250409_0", "186540"));//	
 	//mapCassBM.insert(std::make_pair(110402, 134100));//	淤泥滩边界	186540	SXSS	
 	//mapCassBM.insert(std::make_pair(110402, 134100));//	淤泥滩符号	186540-1	SXSS	250405
 	//mapCassBM.insert(std::make_pair(110402, 134100));//	单个淤泥滩符号	186541	SXSS	
 	mapCassBM.insert(std::make_pair("250404_0", "186550"));//	岩滩.珊瑚滩	186550	SXSS	250404
-	mapCassBM.insert(std::make_pair("250408_0", "186561"));//	贝类养殖滩符号	186561	SXSS	250408
-	mapCassBM.insert(std::make_pair("250407_0", "186571"));//	红树滩符号	186571	SXSS	250407
+	mapCassBM.insert(std::make_pair("250408_0", "186560"));//	贝类养殖滩	186561	SXSS	250408
+	mapCassBM.insert(std::make_pair("250408_1", "186561"));//	贝类养殖滩符号	186561	SXSS	250408
+	mapCassBM.insert(std::make_pair("250407_0", "186570"));//	红树滩	186571	SXSS	250407
+	mapCassBM.insert(std::make_pair("250407_1", "186571"));//	红树滩符号	186571	SXSS	250407
 	mapCassBM.insert(std::make_pair("330300_0", "186600"));//	水产养殖场	186600	SXSS	330300
-	mapCassBM.insert(std::make_pair("250501_0", "186700"));//	危险岸	186700	SXSS	250501
+	mapCassBM.insert(std::make_pair("250501_0", "186710"));//	危险岸	186700	SXSS	250501
+	mapCassBM.insert(std::make_pair("250501_1", "186711"));//	危险岸符号	186700	SXSS	250501
 	mapCassBM.insert(std::make_pair("250601_0", "186811"));//	依比例明礁	186811	SXSS	
 	mapCassBM.insert(std::make_pair("250601_1", "186812"));//	不依比例单个明礁	186812	SXSS	250601
 	mapCassBM.insert(std::make_pair("250601_2", "186813"));//	不依比例丛礁(明礁)	186813	SXSS	
 	//mapCassBM.insert(std::make_pair(110402, 134100));//	危险区域(明礁)	186814	SXSS	
-	//mapCassBM.insert(std::make_pair(110402, "186821"));//	依比例干出礁	186821	SXSS	
+	mapCassBM.insert(std::make_pair("250603_0", "186821"));//	依比例干出礁	186821	SXSS	
 	mapCassBM.insert(std::make_pair("250603_1", "186822"));//	不依比例单个干出礁	186822	SXSS	
 	mapCassBM.insert(std::make_pair("250603_2", "186823"));//	不依比例丛礁(干出礁)	186823	SXSS	
 	//mapCassBM.insert(std::make_pair(110402, 134100));//	危险区域(干出礁)	186824	SXSS	
-	//mapCassBM.insert(std::make_pair(110402, 134100));//	依比例适淹礁	186831	SXSS	
+	mapCassBM.insert(std::make_pair("250604_0", "186831"));//	依比例适淹礁	186831	SXSS	
 	mapCassBM.insert(std::make_pair("250604_1", "186832"));//	不依比例单个适淹礁	186832	SXSS	
 	mapCassBM.insert(std::make_pair("250604_2", "186833"));//	不依比例丛礁(适淹礁)	186833	SXSS	
 	//mapCassBM.insert(std::make_pair(110402, 134100));//	危险区域(适淹礁)	186834	SXSS	
-	//mapCassBM.insert(std::make_pair(110402, 134100));//	依比例暗礁	186841	SXSS	
+	mapCassBM.insert(std::make_pair("250602_0", "186841"));//	依比例暗礁	186841	SXSS	
 	mapCassBM.insert(std::make_pair("250602_1", "186842"));//	不依比例单个暗礁	186842	SXSS	
 	mapCassBM.insert(std::make_pair("250602_2", "186843"));//	不依比例丛礁(暗礁)	186843	SXSS	
 	//mapCassBM.insert(std::make_pair(110402, 134100));//	危险区域(暗礁)	186844	SXSS	
@@ -2131,7 +2209,8 @@ void CExportCass::LoadCassBM()
 	//mapCassBM.insert(std::make_pair(110402, 134100));//	露岩地符号	203420-1	DMTZ	750702
 	//mapCassBM.insert(std::make_pair(110402, 134100));//	单个露岩地符号	203421	DMTZ	
 	mapCassBM.insert(std::make_pair("750501_1", "203500"));//	冲沟	203500	DMTZ	750501
-	mapCassBM.insert(std::make_pair("230300_0", "203600"));//	干河床.干涸湖	203600	DMTZ	230300
+	mapCassBM.insert(std::make_pair("210300_0", "203600"));//	干河床.干涸湖	203600	DMTZ	
+	//mapCassBM.insert(std::make_pair("230300_0", "203600"));//	干涸湖	203600	DMTZ	
 	mapCassBM.insert(std::make_pair("750502_0", "203701"));//	依比例地裂缝	203701	DMTZ	750502
 	mapCassBM.insert(std::make_pair("750502_1", "203702"));//	不依比例地裂缝	203702	DMTZ	
 	mapCassBM.insert(std::make_pair("750201_0", "203800"));//	岩溶漏斗	203800	DMTZ	750201
@@ -2201,8 +2280,8 @@ void CExportCass::LoadCassBM()
 	mapCassBM.insert(std::make_pair("830301_1", "206601"));//	单个龟裂地符号	206601	DMTZ	
 	//mapCassBM.insert(std::make_pair(110402, 134100));//	线状龟裂地	206602	DMTZ	
 	//mapCassBM.insert(std::make_pair(110402, 134100));//	线状龟裂地符号	206602-1	DMTZ	
-	//mapCassBM.insert(std::make_pair(110402, 134100));//	能通行沼泽地	206701	DMTZ	
-	//mapCassBM.insert(std::make_pair(110402, 134100));//	不能通行沼泽地	206702	DMTZ	
+	mapCassBM.insert(std::make_pair("261201_0", "206701"));//	能通行沼泽地	206701	DMTZ	
+	mapCassBM.insert(std::make_pair("261202_0", "206702"));//	不能通行沼泽地	206702	DMTZ	
 	mapCassBM.insert(std::make_pair("321200_0", "206800"));//	盐田.盐场范围线	206800	DMTZ	321200
 	mapCassBM.insert(std::make_pair("810305_0", "206900"));//	台田	206900	DMTZ	810305
 	mapCassBM.insert(std::make_pair("810301_0", "211100"));//	稻田边界	211100	ZBTZ	810301
@@ -2435,6 +2514,27 @@ bool CExportCass::isCassPoint()
 	{
 		return true;
 	}else
+	if (strcmp(strcassBM,"270202_1") == 0)// mapCassBM.insert(std::make_pair("750300_1", "205102"));//	不能通车船闸	
+	{
+		return true;
+	}else
+	if (strcmp(strcassBM,"270201_2") == 0)// mapCassBM.insert(std::make_pair("750300_1", "205102"));//	能通车水闸	
+	{
+		return true;
+	}else
+	if (strcmp(strcassBM,"270201_3") == 0)// mapCassBM.insert(std::make_pair("750300_1", "205102"));//	不能通车水闸	
+	{
+		return true;
+	}else
+	if (strcmp(strcassBM,"270201_4") == 0)// mapCassBM.insert(std::make_pair("750300_1", "205102"));//	不能走人水闸	
+	{
+		return true;
+	}else
+	if (strcmp(strcassBM,"270202_0") == 0)// mapCassBM.insert(std::make_pair("750300_1", "205102"));//	能通车船闸	
+	{
+		return true;
+	}else
+	
 		return false;
 	
 
@@ -3886,6 +3986,266 @@ void CExportCass::Huacao()
 	
 }
 
+bool CExportCass::isDaoxiandian()
+{
+	//if (strcmp(strcassBM,"110107_0") == 0  )// 导线点
+	//{
+	//	return true;
+	//}else
+		return false;
+}
+
+void CExportCass::Daoxiandian()
+{
+
+}
+
+//220600_0 半比例输水槽
+bool CExportCass::isHalfshushui()
+{
+	if (strcmp(strcassBM,"220600_0") == 0  )// 半比例输水槽
+	{
+		return true;
+	}else
+		return false;
+}
+
+void CExportCass::Halfshushui()
+{
+	UINT ptsum=m_CurLineX.GetSize();
+
+	if (ptsum<2)
+		return ;
+
+	for (UINT i=0; i<ptsum; i++)
+	{
+		double x = m_CurLineX[i];
+		m_lineHuacaoX.Add(x);
+		double y = m_CurLineY[i];
+		m_lineHuacaoY.Add(y);
+		double z = m_CurLineZ[i];
+		m_lineHuacaoZ.Add(z);
+	}
+
+	if (m_lineHuacaoX.GetSize() <= m_CurLineX.GetSize() )
+		return ;
+
+	ptsum = m_lineHuacaoX.GetSize();
+
+	//平行地物之间的距离
+	double dis = sqrt( (m_lineHuacaoX[0]-m_lineHuacaoX[ptsum/2])*(m_lineHuacaoX[0]-m_lineHuacaoX[ptsum/2])+
+		(m_lineHuacaoY[0]-m_lineHuacaoY[ptsum/2])*(m_lineHuacaoY[0]-m_lineHuacaoY[ptsum/2]) );
+
+	//水平的时候
+	bool isChui = false;
+	if (abs(m_lineHuacaoX[0]-m_lineHuacaoX[1]) > abs(m_lineHuacaoY[0]-m_lineHuacaoY[1]))
+	{
+		isChui = true;
+	}
+
+	//方向
+	if (!isChui) //垂直
+	{
+		//垂直方向左 ，由大到小
+		if ( abs(m_lineHuacaoY[0])>abs( m_lineHuacaoY[1]))
+		{
+			for (int i=0; i<ptsum/2; i++)
+			{
+				if(i==0)//开始
+				{
+					fprintf(m_fp,"[%s]\nPLINE\n","DLDW");///////////////////////////图层、类型
+					if (abs(m_lineHuacaoX[0])>abs( m_lineHuacaoX[ptsum/2]))
+					{
+						fprintf(m_fp,"%s,0.000,N,%.3lf\n", m_curCassBM,-dis);/////////实体编码，线宽，拟合类型，附加值
+					}else
+						fprintf(m_fp,"%s,0.000,N,%.3lf\n", m_curCassBM,dis);/////////实体编码，线宽，拟合类型，附加值
+					
+					fprintf(m_fp,"%.3lf,%.3lf\n", m_lineHuacaoX[i], m_lineHuacaoY[i]);
+				}else
+					fprintf(m_fp,"%.3lf,%.3lf\n", m_lineHuacaoX[i], m_lineHuacaoY[i]);
+			}
+		}else
+		{
+			for (int i=ptsum/2-1; i>=0; i--)
+			{
+				if(i==ptsum/2-1)//开始
+				{
+					fprintf(m_fp,"[%s]\nPLINE\n","DLDW");///////////////////////////图层、类型
+					if (abs(m_lineHuacaoX[0])>abs( m_lineHuacaoX[ptsum/2]))
+					{
+						fprintf(m_fp,"%s,0.000,N,%.3lf\n", m_curCassBM,-dis);/////////实体编码，线宽，拟合类型，附加值
+					}else
+						fprintf(m_fp,"%s,0.000,N,%.3lf\n", m_curCassBM,dis);/////////实体编码，线宽，拟合类型，附加值
+					fprintf(m_fp,"%.3lf,%.3lf\n", m_lineHuacaoX[i], m_lineHuacaoY[i]);
+				}else
+					fprintf(m_fp,"%.3lf,%.3lf\n", m_lineHuacaoX[i], m_lineHuacaoY[i]);
+			}
+		}
+	}else //水平
+	{
+		//水平方向 上 ，由大到小
+		if ( abs(m_lineHuacaoX[0])>abs( m_lineHuacaoX[1]))
+		{
+			for (int i=0; i<ptsum/2; i++)
+			{
+				if(i==0)//开始
+				{
+					fprintf(m_fp,"[%s]\nPLINE\n","DLDW");///////////////////////////图层、类型
+					if (abs(m_lineHuacaoY[0])>abs( m_lineHuacaoY[ptsum/2]))
+					{
+						fprintf(m_fp,"%s,0.000,N,%.3lf\n", m_curCassBM,dis);
+					}else
+						fprintf(m_fp,"%s,0.000,N,%.3lf\n", m_curCassBM,-dis);/////////实体编码，线宽，拟合类型，附加值
+					fprintf(m_fp,"%.3lf,%.3lf\n", m_lineHuacaoX[i], m_lineHuacaoY[i]);
+				}else
+					fprintf(m_fp,"%.3lf,%.3lf\n", m_lineHuacaoX[i], m_lineHuacaoY[i]);
+			}
+		}else//水平方向 下 ，由小到大
+		{
+			for (int i=ptsum/2-1; i>=0; i--)
+			{
+				if(i==ptsum/2-1)//开始
+				{
+					fprintf(m_fp,"[%s]\nPLINE\n","DLDW");///////////////////////////图层、类型
+					if (abs(m_lineHuacaoY[0])>abs( m_lineHuacaoY[ptsum/2]))
+					{
+						fprintf(m_fp,"%s,0.000,N,%.3lf\n", m_curCassBM,dis);
+					}else
+						fprintf(m_fp,"%s,0.000,N,%.3lf\n", m_curCassBM,-dis);/////////实体编码，线宽，拟合类型，附加值
+					fprintf(m_fp,"%.3lf,%.3lf\n", m_lineHuacaoX[i], m_lineHuacaoY[i]);
+				}else
+					fprintf(m_fp,"%.3lf,%.3lf\n", m_lineHuacaoX[i], m_lineHuacaoY[i]);
+			}
+		}
+	}
+
+
+	fprintf(m_fp,"E\n");
+	fprintf(m_fp,"UNAME,0:\n");
+	fprintf(m_fp,"MC,0:\n");
+	fprintf(m_fp,"LX,0:\n");
+	fprintf(m_fp,"ZT,0:\n");
+	fprintf(m_fp,"KD,3:\n");
+	fprintf(m_fp,"SJY,0:\n");
+	fprintf(m_fp,"GXRQ,0:\n");
+	fprintf(m_fp,"e\nNil\n");
+	m_lineHuacaoX.RemoveAll();
+	m_lineHuacaoY.RemoveAll();
+	m_lineHuacaoZ.RemoveAll();
+}
+
+//221000_0 双线干沟
+bool CExportCass::isDoubleditch()
+{
+	if (strcmp(strcassBM,"221000_0") == 0  )// 双线干沟
+	{
+		return true;
+	}else
+		return false;
+}
+
+//双线干沟，必须是双线
+void CExportCass::Doubleditch()
+{
+	UINT ptsum=m_CurLineX.GetSize();
+
+	if (ptsum<2)
+		return ;
+
+	for (UINT i=0; i<ptsum; i++)
+	{
+		double x = m_CurLineX[i];
+		m_lineDoubleditchX.Add(x);
+		double y = m_CurLineY[i];
+		m_lineDoubleditchY.Add(y);
+		double z = m_CurLineZ[i];
+		m_lineDoubleditchZ.Add(z);
+	}
+
+	if (m_lineDoubleditchX.GetSize() <= m_CurLineX.GetSize() )
+		return ;
+
+	ptsum = m_lineDoubleditchX.GetSize();
+
+	for (UINT i=0; i<ptsum/2; i++)
+	{
+		if(i==0)//开始
+		{
+			fprintf(m_fp,"[%s]\nPLINE\n","SXSS");///////////////////////////图层、类型
+			fprintf(m_fp,"%s,%.3lf,N,0\n", "183502",m_lineDoubleditchZ[i]);/////////双线干沟左边183502 实体编码，线宽，拟合类型，附加值
+
+			fprintf(m_fp,"%.3lf,%.3lf\n", m_lineDoubleditchX[i], m_lineDoubleditchY[i]);
+
+		}else
+			fprintf(m_fp,"%.3lf,%.3lf\n", m_lineDoubleditchX[i], m_lineDoubleditchY[i]);
+
+		if(i == (ptsum/2-1))
+		{
+			fprintf(m_fp,"E\n");
+			fprintf(m_fp,"UNAME,0:\n");
+			fprintf(m_fp,"MC,0:\n");
+			fprintf(m_fp,"STBM,0:\n");
+			fprintf(m_fp,"YSYF,0:\n");
+			fprintf(m_fp,"SZLX,0:\n");
+			fprintf(m_fp,"YT,0:\n");
+			fprintf(m_fp,"KRL,2:\n");
+			fprintf(m_fp,"ZL,0:\n");
+			fprintf(m_fp,"LX,0:\n");
+			fprintf(m_fp,"XT,0:\n");
+			fprintf(m_fp,"CJWLX,0:\n");
+			fprintf(m_fp,"JS,3:\n");
+			fprintf(m_fp,"KD,3:\n");
+			fprintf(m_fp,"GD,3:\n");
+			fprintf(m_fp,"SJY,0:\n");
+			fprintf(m_fp,"GXRQ,0:\n");
+			fprintf(m_fp,"e\nnil\n");
+		}
+
+	}
+
+	for (UINT i=ptsum/2; i<ptsum; i++)
+	{
+		if(i==ptsum/2)//开始
+		{
+			fprintf(m_fp,"[%s]\nPLINE\n","SXSS");///////////////////////////图层、类型
+			fprintf(m_fp,"%s,%.3lf,N,0\n", "183501",m_lineDoubleditchZ[i]);/////////双线干沟右边183501 实体编码，线宽，拟合类型，附加值
+
+			fprintf(m_fp,"%.3lf,%.3lf\n", m_lineDoubleditchX[i], m_lineDoubleditchY[i]);
+
+		}else
+			fprintf(m_fp,"%.3lf,%.3lf\n", m_lineDoubleditchX[i], m_lineDoubleditchY[i]);
+
+		if(i == (ptsum-1))
+		{
+			fprintf(m_fp,"E\n");
+			fprintf(m_fp,"UNAME,0:\n");
+			fprintf(m_fp,"MC,0:\n");
+			fprintf(m_fp,"STBM,0:\n");
+			fprintf(m_fp,"YSYF,0:\n");
+			fprintf(m_fp,"SZLX,0:\n");
+			fprintf(m_fp,"YT,0:\n");
+			fprintf(m_fp,"KRL,2:\n");
+			fprintf(m_fp,"ZL,0:\n");
+			fprintf(m_fp,"LX,0:\n");
+			fprintf(m_fp,"XT,0:\n");
+			fprintf(m_fp,"CJWLX,0:\n");
+			fprintf(m_fp,"JS,3:\n");
+			fprintf(m_fp,"KD,3:\n");
+			fprintf(m_fp,"GD,3:\n");
+			fprintf(m_fp,"SJY,0:\n");
+			fprintf(m_fp,"GXRQ,0:\n");
+			fprintf(m_fp,"e\nnil\n");
+		}
+		
+	}
+
+
+	
+	m_lineDoubleditchX.RemoveAll();
+	m_lineDoubleditchY.RemoveAll();
+	m_lineDoubleditchZ.RemoveAll();
+}
+
 bool CExportCass::isSpecialFeature()
 {
 	if (isStep())
@@ -3963,6 +4323,18 @@ bool CExportCass::isSpecialFeature()
 	}else if (isHuacao())
 	{
 		Huacao();
+		return true;
+	}else if (isDaoxiandian())
+	{
+		Daoxiandian();
+		return true;
+	}else if(isHalfshushui())
+	{
+		Halfshushui();
+		return true;
+	}else if(isDoubleditch())
+	{
+		Doubleditch();
 		return true;
 	}
 		

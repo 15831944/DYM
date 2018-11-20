@@ -228,8 +228,9 @@ void CContourDockDlg::SetZValue(double lfZValue, BOOL bOnlyShow/* =FALSE */)
 	m_lfZValue=_DOUBLE_DIGIT_3(lfZValue);
 	if(!bOnlyShow)
 	{
+		GPoint gpt; gpt.z = m_lfZValue;
 		CMainFrame* pMainFrm=(CMainFrame*)AfxGetMainWnd(); ASSERT(pMainFrm);
-		pMainFrm->SendMessage(WM_INPUT_MSG,Set_DrizeHeight,LPARAM(&m_lfZValue));
+		pMainFrm->SendMessage(WM_INPUT_MSG,Set_DrizeHeight,LPARAM(&gpt));
 	}
 	UpdateData(FALSE);
 }
@@ -400,8 +401,9 @@ void CContourDockDlg::OnClickedButtonContourIncreaseZ()
 	{
 		UpdateData(TRUE);
 		m_lfZValue+=m_lfZValueStep;
+		GPoint gpt; gpt.z = m_lfZValue;
 		CMainFrame* pMainFrm=(CMainFrame*)AfxGetMainWnd(); ASSERT(pMainFrm);
-		pMainFrm->SendMessage(WM_INPUT_MSG,Set_DrizeHeight,LPARAM(&m_lfZValue));
+		pMainFrm->SendMessage(WM_INPUT_MSG,Set_DrizeHeight,LPARAM(&gpt));
 		UpdateData(FALSE);
 	}
 }
@@ -413,9 +415,9 @@ void CContourDockDlg::OnClickedButtonContourDecreaseZ()
 	if(GetDlgItem(IDC_BUTTON_CONTOUR_DECREASE_Z)->IsWindowVisible())
 	{
 		UpdateData(TRUE);
-		m_lfZValue-=m_lfZValueStep;
+		m_lfZValue-=m_lfZValueStep; GPoint gpt; gpt.z = m_lfZValue;
 		CMainFrame* pMainFrm=(CMainFrame*)AfxGetMainWnd(); ASSERT(pMainFrm);
-		pMainFrm->SendMessage(WM_INPUT_MSG,Set_DrizeHeight,LPARAM(&m_lfZValue));
+		pMainFrm->SendMessage(WM_INPUT_MSG,Set_DrizeHeight,LPARAM(&gpt));
 		UpdateData(FALSE);
 	}
 }
@@ -689,8 +691,9 @@ BOOL CContourDockDlg::PreTranslateMessage(MSG* pMsg)
 		{
 			char strValue[1024]; pWnd->GetWindowText(strValue,1024);
 			m_lfZValue=atof(strValue);
+			GPoint gpt; gpt.z = m_lfZValue;
 			CMainFrame* pMainFrm=(CMainFrame*)AfxGetMainWnd(); ASSERT(pMainFrm);
-			pMainFrm->SendMessage(WM_INPUT_MSG,Set_DrizeHeight,LPARAM(&m_lfZValue));
+			pMainFrm->SendMessage(WM_INPUT_MSG,Set_DrizeHeight,LPARAM(&gpt));
 		}
 	}
 
@@ -702,7 +705,8 @@ void CContourDockDlg::OnKillfocusEditContourZvalue()
 {
 	UpdateData(TRUE);
 	CMainFrame* pMainFrm=(CMainFrame*)AfxGetMainWnd(); ASSERT(pMainFrm);
-	pMainFrm->SendMessage(WM_INPUT_MSG,Set_DrizeHeight,LPARAM(&m_lfZValue));
+	GPoint gpt; gpt.z = m_lfZValue;
+	pMainFrm->SendMessage(WM_INPUT_MSG,Set_DrizeHeight,LPARAM(&gpt));
 }
 
 
