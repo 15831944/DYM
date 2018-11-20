@@ -127,7 +127,7 @@ const double* CSpSelectSet::GetNearestPt(GPoint& gp, const double* bufmin, const
 		}
 		else 
 		{
-			if (m_SnapType & eST_Vertex) {
+			if (m_SnapType == eST_Vertex) {
 				gp1.x = *buf++;
 				gp1.y = *buf++;
 				gp1.z = *buf++; Project(gp1);

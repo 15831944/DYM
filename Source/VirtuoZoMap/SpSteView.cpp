@@ -449,7 +449,7 @@ BOOL CSpSteView::PreTranslateMessage(MSG* pMsg)
 			WORD oldSnaptype = pSelect->GetSnapType();
 			pSelect->SetSnapType(0x0000 ^ eST_Vertex);
 			float oldSnapAp = ((CVirtuoZoMapDoc *)GetDocument())->m_igsCursor.GetSnapAp();
-			((CVirtuoZoMapDoc *)GetDocument())->m_igsCursor.SetSnapAp(oldSnapAp * 3);
+		//	((CVirtuoZoMapDoc *)GetDocument())->m_igsCursor.SetSnapAp(oldSnapAp * 3);
 			pSelect->SetAP(oldSnapAp * 3, float(m_pModCvt->GetGsd()), GetZoomRate());
 
 			GPoint gpt = m_gPos;
@@ -492,7 +492,7 @@ BOOL CSpSteView::PreTranslateMessage(MSG* pMsg)
 			WORD oldSnaptype = pSelect->GetSnapType();
 			pSelect->SetSnapType(0x0000 ^ eST_NearestPt);
 			float oldSnapAp = ((CVirtuoZoMapDoc *)GetDocument())->m_igsCursor.GetSnapAp();
-			((CVirtuoZoMapDoc *)GetDocument())->m_igsCursor.SetSnapAp(oldSnapAp * 3);
+		//	((CVirtuoZoMapDoc *)GetDocument())->m_igsCursor.SetSnapAp(oldSnapAp * 3);
 			pSelect->SetAP(oldSnapAp * 3, float(m_pModCvt->GetGsd()), GetZoomRate());
 
 			GPoint gpt = m_gPos;
