@@ -433,11 +433,11 @@ BOOL CMapSvrEdit::OnLButtonDown(WPARAM wParam, LPARAM lParam)
 				//Add [2013-12-30]		//此处要区分二维咬合和三维咬合两种状态
 				if (m_pSelSet->GetSnap2D() == TRUE)
 				{
-					GetSvrMgr()->OutPut(mf_SetViewZ, LPARAM(&(tz)));
+					GetSvrMgr()->OutPut(mf_SetViewZ, LPARAM(&(gpt)));
 				}
 				else
 				{
-					GetSvrMgr()->OutPut(mf_SetViewZ, LPARAM(&(gpt.z)));
+					GetSvrMgr()->OutPut(mf_SetViewZ, LPARAM(&(gpt)));
 				}
 				//Add [2013-12-30]		//此处要区分二维咬合和三维咬合两种状态
 

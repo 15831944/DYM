@@ -511,8 +511,9 @@ LRESULT CSpImgView::OnInputMsg( WPARAM wParam,LPARAM lParam )
 		}
 		break;
 	case Set_DrizeHeight:
-		{
-			double gZ = *(double *)lParam;
+	{	
+		GPoint selPt = *((GPoint*)lParam);
+	double gZ = selPt.z;
 			if (gZ < NOVALUE_Z+1) { return 0; }
 			m_gPos.z = gZ;
 			SetCursorGrdPos(m_gPos);

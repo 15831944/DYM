@@ -1165,8 +1165,9 @@ LRESULT CSpVctView2::OnInputMsg(WPARAM wParam, LPARAM lParam)
 		OnInputMsg(Set_Cursor, (LPARAM)&gpt);
 	}break;
 	case Set_DrizeHeight:
-	{
-		double gZ = *(double *)lParam;
+	{	
+		GPoint selPt = *((GPoint*)lParam);
+	double gZ = selPt.z;
 		if (gZ < NOVALUE_Z + 1) { return 0; }
 		m_gPos.z = gZ;
 		SetCursorGrdPos(m_gPos);
