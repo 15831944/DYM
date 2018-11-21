@@ -1252,8 +1252,8 @@ LRESULT    CMainFrame::OnSvrMsgOutPut( WPARAM wParam,LPARAM lParam )
 					pSelect->SetSnap2D(m_bOldSnap2D);
 				}
 
-				//进行绘图的时候关闭捕捉
-				if (eOS == os_Draw || eOS == os_Text || eOS == os_Cnt) {
+				//进行绘图的时候关闭捕捉 - lkb
+			/*	if (eOS == os_Draw || eOS == os_Text || eOS == os_Cnt) {
 					m_wOldSnapType = pSelect->GetSnapType();
 					pVirDoc->m_dlgMdiSnap.OnBnClickedButtonUncheckAll();
 					pVirDoc->m_dlgMdiSnap.EnableSnap(false);
@@ -1261,7 +1261,7 @@ LRESULT    CMainFrame::OnSvrMsgOutPut( WPARAM wParam,LPARAM lParam )
 				else{
 					pVirDoc->m_dlgMdiSnap.SetSnapType(m_wOldSnapType);
 					pVirDoc->m_dlgMdiSnap.EnableSnap(true);
-				}
+				}*/
 
 				if ((eOS == os_Draw) || (eOS == os_CurveModify)) //进入采集或修测状态，强制弹出采集功能框
 				{

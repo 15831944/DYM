@@ -493,12 +493,17 @@ BOOL CSpSteView::PreTranslateMessage(MSG* pMsg)
 			pSelect->SetSnapType(0x0000 ^ eST_NearestPt);
 			float oldSnapAp = ((CVirtuoZoMapDoc *)GetDocument())->m_igsCursor.GetSnapAp();
 		//	((CVirtuoZoMapDoc *)GetDocument())->m_igsCursor.SetSnapAp(oldSnapAp * 3);
-			pSelect->SetAP(oldSnapAp * 3, float(m_pModCvt->GetGsd()), GetZoomRate());
+			pSelect->SetAP(oldSnapAp*3, float(m_pModCvt->GetGsd()), GetZoomRate());
 
 			GPoint gpt = m_gPos;
 			eSnapType type;
 			if (pSelect->SnapObjPt(gpt, type)) {
+
+				((CVirtuoZoMapDoc *)GetDocument())->m_igsCursor.SetSnapAp(oldSnapAp / 2.0);
+				pSelect->SetAP(oldSnapAp, float(m_pModCvt->GetGsd()), GetZoomRate());
+
 				if (type == eST_NearestPt) {
+				//	gpt = m_gPos;
 					OperMsgToMgr(MK_LBUTTON, gpt, os_LBTDOWN, this);
 					if (m_LBDPoint.x != NOVALUE_Z)
 						m_LBDPointLast = m_LBDPoint;

@@ -127,6 +127,7 @@ const double* CSpSelectSet::GetNearestPt(GPoint& gp, const double* bufmin, const
 		}
 		else 
 		{
+			//判断最近节点
 			if (m_SnapType == eST_Vertex) {
 				gp1.x = *buf++;
 				gp1.y = *buf++;
@@ -143,7 +144,7 @@ const double* CSpSelectSet::GetNearestPt(GPoint& gp, const double* bufmin, const
 					Project(snap);
 				}
 
-				continue;
+			//	continue;
 			}
 
 			if( !bMoveToAlready ){ 

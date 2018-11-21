@@ -343,7 +343,12 @@ BOOL CSpVctView::PreTranslateMessage(MSG* pMsg)
 
 			eSnapType type;
 			if (pSelect->SnapObjPt(gpt, type)) {
+
+				((CVirtuoZoMapDoc *)GetDocument())->m_igsCursor.SetSnapAp(oldSnapAp / 2.0);
+				pSelect->SetAP(oldSnapAp, (float)m_gsd, GetZoomRate());
+
 				if (type == eST_NearestPt) {
+				//	gpt = m_gPos;
 					OperMsgToMgr(MK_LBUTTON, gpt, os_LBTDOWN, this);
 					if (m_LBDPoint.x != NOVALUE_Z)
 						m_LBDPointLast = m_LBDPoint;
