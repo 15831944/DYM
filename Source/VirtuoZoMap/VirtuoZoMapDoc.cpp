@@ -302,7 +302,7 @@ CVirtuoZoMapDoc::CVirtuoZoMapDoc()
 	m_MarkLineColor = RGB(0, 0, 255);
 
 	m_igsCursor.SetType ( 0 );
-	m_igsCursor.SetColor( RGB(255,255,255) );
+	m_igsCursor.SetColor( RGB(255,0,0) );
 	m_igsCursor.SetSnapAp( 12 ); // д╛хо10 [7/10/2017 jobs]
 
 	m_bSingleCrossState = TRUE;
@@ -793,6 +793,7 @@ BOOL CVirtuoZoMapDoc::OnNewDocument()
 	{
 		theApp.CreateVectorView(this);
 		theApp.CreateCommonSym();
+		theApp.m_pDlgCommonSym->ShowWindow(true); 
 
 		LPCTSTR lpszPathName = (LPCTSTR)theApp.m_MapMgr.GetParam(pf_GetFilePath);
 		if( lpszPathName == NULL ){ ASSERT(FALSE); return FALSE; }
@@ -828,6 +829,7 @@ BOOL CVirtuoZoMapDoc::OnOpenDocument(LPCTSTR lpszPathName)
 	{
 		theApp.CreateVectorView(this);
 		theApp.CreateCommonSym();
+		theApp.m_pDlgCommonSym->ShowWindow(true);
 
 		BOOL bRet = theApp.m_MapMgr.InPut(st_Act, as_OpenFile, (LPARAM)(LPCTSTR)(lpszPathName));
 		if (!bRet) {

@@ -136,6 +136,16 @@ void CDlgLastModelList::OnOK()
 				m_strModelList.Add(str);
 			}
 		}
+		if (sum > 0) {
+
+			if (theApp.m_pDlgVectorView)
+			{
+				if (!theApp.m_pDlgVectorView->IsWindowVisible())
+				{
+					theApp.m_pDlgVectorView->ShowWindow(true);
+				}
+			}
+		}
 	}
 	catch (CSpException se)
 	{

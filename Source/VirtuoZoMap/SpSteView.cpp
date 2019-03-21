@@ -24,7 +24,7 @@ CSpSteView::CSpSteView()
 	//wx:2018-3-4设置范围，模拟自由漫游，扩大1000倍
 	SetMargin(256*1000);  
 	m_bZoomCent = true; 
-	m_bRevSte = true; //add [2017-1-4] 
+	m_bRevSte = false; //add [2017-1-4] 
 	m_pModCvt = NULL;
 	m_bSynzoom  = FALSE;
 	m_bFromWheel = FALSE;

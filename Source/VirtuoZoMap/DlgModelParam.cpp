@@ -880,6 +880,14 @@ void CDlgModelParam::OpenModelView( int nType )
 		}
 		hChild = m_tree.GetNextSelectedItem(hChild);
 	}
+
+	if (theApp.m_pDlgVectorView)
+	{
+		if (!theApp.m_pDlgVectorView->IsWindowVisible())
+		{
+			theApp.m_pDlgVectorView->ShowWindow(true);
+		}
+	}
 }
 
 void CDlgModelParam::OnModelCreateEpi()

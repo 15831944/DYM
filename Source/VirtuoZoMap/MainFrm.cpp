@@ -345,8 +345,8 @@ int CMainFrame::OnCreate(LPCREATESTRUCT lpCreateStruct)
 	DockPaneLeftOf(&m_wndDrawBar, &m_wndEditBar);
 	DockPaneLeftOf(&m_wndViewBar2, &m_wndDrawBar);
 
-	//AttachDev(GetSafeHwnd());
-	::WinExec("SpDevDrv.exe", SW_HIDE); Sleep(256);
+	AttachDev(GetSafeHwnd());
+	//::WinExec("SpDevDrv.exe", SW_HIDE); Sleep(256);
 	return 0;
 }
 
